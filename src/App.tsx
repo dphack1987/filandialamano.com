@@ -1,131 +1,40 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, Menu, X, Heart, Navigation, Star } from 'lucide-react'
-import { Place } from './types'
+import { Search, MapPin, Coffee, Building2, Utensils, Star, Heart, Navigation, Menu, X, Globe, Moon, Sun, Zap } from 'lucide-react'
 import { useStore } from './store/useStore'
-import dataService from './services/dataService'
 import AdvancedMap from './components/map/AdvancedMap'
-import MapControls from './components/map/MapControls'
 import ThemeToggle from './components/ui/ThemeToggle'
-import FavoritesPanel from './components/favorites/FavoritesPanel'
-import RoutingPanel from './components/routing/RoutingPanel'
 import './styles.css'
-import './App.css'
-import './components/map/AdvancedMap.css'
-import './components/map/MapControls.css'
-import './components/ui/ThemeToggle.css'
-import './components/favorites/FavoritesPanel.css'
-import './components/routing/RoutingPanel.css'
 
 function App() {
   const [loading, setLoading] = useState(true)
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
-  const [activePanel, setActivePanel] = useState<'favorites' | 'routing' | null>(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState<'home' | 'map' | 'explore'>('home')
 
-  const {
-    places,
-    setPlaces,
-    selectedPlace,
-    setSelectedPlace,
-    userLocation,
-    setUserLocation,
-    searchQuery,
-    setSearchQuery,
-    addToSearchHistory,
-    theme,
-    language,
-    setLanguage,
-    currency,
-    setCurrency,
-    isFavorite,
-    addFavorite,
-    removeFavorite
-  } = useStore()
+  const { theme, setTheme, places, searchQuery, setSearchQuery } = useStore()
 
-  // Load data
-  const loadData = useCallback(async () => {
-    try {
-      setLoading(true)
-      const [loadedPlaces] = await Promise.all([
-        dataService.getPlaces()
-      ])
-      setPlaces(loadedPlaces)
-    } catch (error) {
-      console.error('Error loading data:', error)
-    } finally {
-      setLoading(false)
-    }
-  }, [setPlaces])
-
-  // Get user location
-  const getUserLocation = useCallback(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setUserLocation({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          })
-        },
-        (error) => {
-          console.error('Error getting location:', error)
-        }
-      )
-    }
-  }, [setUserLocation])
-
-  // Search places
-  const handleSearch = useCallback(async (query: string) => {
-    setSearchQuery(query)
-    if (query.trim()) {
-      addToSearchHistory(query)
-      const results = await dataService.searchPlaces(query)
-      setPlaces(results)
-    } else {
-      loadData()
-    }
-  }, [setSearchQuery, addToSearchHistory, setPlaces, loadData])
-
-  // Handle place selection
-  const handlePlaceSelect = useCallback((place: Place) => {
-    setSelectedPlace(place)
-  }, [setSelectedPlace])
-
-  // Toggle favorite
-  const toggleFavorite = useCallback((place: Place) => {
-    if (isFavorite(place.id)) {
-      removeFavorite(place.id)
-    } else {
-      addFavorite(place.id)
-    }
-  }, [isFavorite, removeFavorite, addFavorite])
-
-  // Load data on mount
   useEffect(() => {
-    loadData()
-    getUserLocation()
-  }, [loadData, getUserLocation])
-
-  // Apply theme
-  useEffect(() => {
-    const root = document.documentElement
-    if (theme === 'dark') {
-      root.setAttribute('data-theme', 'dark')
-    } else if (theme === 'light') {
-      root.setAttribute('data-theme', 'light')
-    } else {
-      // Auto - use system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      root.setAttribute('data-theme', prefersDark ? 'dark' : 'light')
-    }
-  }, [theme])
+    setTimeout(() => setLoading(false), 1200)
+  }, [])
 
   if (loading) {
     return (
       <div className="loading-container">
-        <div className="loading-spinner"></div>
-        <p>Cargando mapa de Filandia...</p>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5, type: 'spring' }}
+          className="loading-spinner"
+        />
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="text-lg font-semibold"
+        >
+          Filandia a la Mano
+        </motion.p>
       </div>
     )
   }
@@ -133,247 +42,413 @@ function App() {
   return (
     <div className="app">
       <Helmet>
-        <title>Filandia a la Mano - Mapa Digital Turístico</title>
-        <meta name="description" content="Mapa turístico interactivo de Filandia, Quindío. Alojamientos, gastronomía, experiencias y comercio local verificados." />
+        <title>Filandia a la Mano - Descubre el Corazón del Quindío</title>
+        <meta name="description" content="Descubre Filandia, Quindío: balcones de guadua, paisajes cafeteros, miradores panorámicos y experiencias auténticas del Eje Cafetero." />
       </Helmet>
 
-      {/* Header */}
-      <header className="app-header">
-        <div className="header-content">
-          <div className="header-left">
-            <h1 className="app-title">
-              Filandia
-              <span className="app-subtitle">a la Mano</span>
-            </h1>
+      {/* Modern Navigation */}
+      <nav className="glass-card nav" style={{
+        position: 'fixed',
+        top: '24px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 1000,
+        padding: '16px 32px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '32px',
+        backdropFilter: 'blur(20px)',
+        boxShadow: 'var(--shadow-xl)'
+      }}>
+        <motion.div
+          className="logo"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            cursor: 'pointer'
+          }}
+          onClick={() => setActiveSection('home')}
+        >
+          <div style={{
+            width: '40px',
+            height: '40px',
+            background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))',
+            borderRadius: 'var(--radius)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white'
+          }}>
+            <MapPin size={20} />
           </div>
-
-          <div className="header-center">
-            <div className="search-bar">
-              <Search size={18} className="search-icon" />
-              <input
-                type="text"
-                placeholder="Buscar lugares..."
-                value={searchQuery}
-                onChange={(e) => handleSearch(e.target.value)}
-                className="search-input"
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => handleSearch('')}
-                  className="search-clear"
-                >
-                  <X size={16} />
-                </button>
-              )}
+          <div>
+            <div style={{ fontWeight: 700, fontSize: '1.125rem', color: 'var(--text)' }}>
+              Filandia
+            </div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+              a la Mano
             </div>
           </div>
+        </motion.div>
 
-          <div className="header-right">
-            <ThemeToggle />
-
-            <select
-              value={language}
-              onChange={(e) => setLanguage(e.target.value as any)}
-              className="language-select"
+        <div className="nav-links" style={{
+          display: 'flex',
+          gap: '24px',
+          alignItems: 'center'
+        }}>
+          {['Inicio', 'Mapa', 'Explorar'].map((item, index) => (
+            <motion.button
+              key={item}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              onClick={() => {
+                setActiveSection(item.toLowerCase() as any)
+                setMobileMenuOpen(false)
+              }}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: activeSection === item.toLowerCase() ? 'var(--primary)' : 'var(--text-secondary)',
+                fontWeight: 600,
+                fontSize: '0.875rem',
+                cursor: 'pointer',
+                position: 'relative',
+                padding: '8px 0'
+              }}
             >
-              <option value="es">ES</option>
-              <option value="en">EN</option>
-              <option value="fr">FR</option>
-              <option value="de">DE</option>
-              <option value="pt">PT</option>
-              <option value="it">IT</option>
-            </select>
-
-            <select
-              value={currency}
-              onChange={(e) => setCurrency(e.target.value as any)}
-              className="currency-select"
-            >
-              <option value="COP">COP</option>
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
-            </select>
-
-            <button
-              className="icon-button"
-              onClick={() => setActivePanel(activePanel === 'favorites' ? null : 'favorites')}
-              title="Favoritos"
-            >
-              <Heart size={20} />
-            </button>
-
-            <button
-              className="icon-button"
-              onClick={() => setActivePanel(activePanel === 'routing' ? null : 'routing')}
-              title="Planificar ruta"
-            >
-              <Navigation size={20} />
-            </button>
-
-            <button
-              className="icon-button demo"
-              onClick={() => window.open('/paginas-pautantes/hotel-boutique-filandia.html', '_blank')}
-              title="Ver ejemplo de pauta"
-            >
-              <Star size={20} />
-            </button>
-
-            <button
-              className="mobile-menu-button"
-              onClick={() => setShowMobileMenu(!showMobileMenu)}
-            >
-              {showMobileMenu ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="app-main">
-        {/* Map */}
-        <div className="map-container">
-          <AdvancedMap
-            places={places}
-            onPlaceSelect={handlePlaceSelect}
-            userLocation={userLocation}
-          />
-          <MapControls
-            onLocateUser={getUserLocation}
-            onFitBounds={() => {/* TODO: Implement */}}
-            onResetView={() => {/* TODO: Implement */}}
-          />
-        </div>
-
-        {/* Side Panel */}
-        <AnimatePresence>
-          {activePanel && (
-            <motion.div
-              className="side-panel"
-              initial={{ x: 400, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 400, opacity: 0 }}
-              transition={{ type: 'spring', damping: 25 }}
-            >
-              <button
-                className="panel-close"
-                onClick={() => setActivePanel(null)}
-              >
-                <X size={20} />
-              </button>
-
-              {activePanel === 'favorites' && (
-                <FavoritesPanel
-                  places={places}
-                  onPlaceSelect={handlePlaceSelect}
+              {item}
+              {activeSection === item.toLowerCase() && (
+                <motion.div
+                  layoutId="underline"
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: '2px',
+                    background: 'var(--primary)',
+                    borderRadius: 'var(--radius-full)'
+                  }}
                 />
               )}
+            </motion.button>
+          ))}
+        </div>
 
-              {activePanel === 'routing' && (
-                <RoutingPanel
-                  places={places}
-                  onRouteCalculated={(route) => console.log('Route:', route)}
-                />
-              )}
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <div style={{
+          display: 'flex',
+          gap: '12px',
+          alignItems: 'center'
+        }}>
+          <ThemeToggle />
+          <button
+            style={{
+              width: '40px',
+              height: '40px',
+              background: 'var(--primary)',
+              color: 'white',
+              border: 'none',
+              borderRadius: 'var(--radius)',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+            onClick={() => setActiveSection('map')}
+          >
+            <Search size={18} />
+          </button>
+        </div>
+      </nav>
 
-        {/* Place Detail Modal */}
-        <AnimatePresence>
-          {selectedPlace && (
-            <motion.div
-              className="modal-overlay"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedPlace(null)}
-            >
-              <motion.div
-                className="modal-content"
-                initial={{ scale: 0.9, y: 20 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.9, y: 20 }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button
-                  className="modal-close"
-                  onClick={() => setSelectedPlace(null)}
+      <AnimatePresence mode="wait">
+        {activeSection === 'home' && (
+          <motion.div
+            key="home"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{ flex: 1 }}
+          >
+            {/* Hero Section */}
+            <section className="hero" style={{
+              minHeight: '100vh',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              overflow: 'hidden',
+              background: 'linear-gradient(135deg, var(--primary-50) 0%, var(--background) 100%)'
+            }}>
+              <div className="container" style={{
+                textAlign: 'center',
+                position: 'relative',
+                zIndex: 2
+              }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
                 >
-                  <X size={24} />
-                </button>
-
-                {selectedPlace.photos && selectedPlace.photos.length > 0 && (
-                  <div className="modal-image">
-                    <img src={selectedPlace.photos[0]} alt={selectedPlace.name} />
+                  <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '8px 16px',
+                    background: 'var(--primary-100)',
+                    color: 'var(--primary-700)',
+                    borderRadius: 'var(--radius-full)',
+                    fontSize: '0.875rem',
+                    fontWeight: 600,
+                    marginBottom: '24px'
+                  }}>
+                    <Zap size={16} />
+                    <span>Nuevo mapa turístico interactivo</span>
                   </div>
-                )}
+                </motion.div>
 
-                <div className="modal-body">
-                  <div className="modal-header">
-                    <h2>{selectedPlace.name}</h2>
-                    <span className="modal-badge">{selectedPlace.type}</span>
-                  </div>
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.8 }}
+                  style={{
+                    fontSize: 'clamp(3rem, 8vw, 5rem)',
+                    fontWeight: 800,
+                    background: 'linear-gradient(135deg, var(--text) 0%, var(--primary) 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    marginBottom: '24px',
+                    letterSpacing: '-0.02em'
+                  }}
+                >
+                  Filandia
+                  <br />
+                  <span style={{ color: 'var(--primary)' }}>a la Mano</span>
+                </motion.h1>
 
-                  <p className="modal-description">{selectedPlace.description}</p>
+                <motion.p
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                  style={{
+                    fontSize: '1.25rem',
+                    color: 'var(--text-secondary)',
+                    maxWidth: '600px',
+                    margin: '0 auto 48px'
+                  }}
+                >
+                  Descubre balcones de guadua, paisajes cafeteros infinitos y miradores panorámicos que te dejarán sin aliento.
+                </motion.p>
 
-                  <div className="modal-details">
-                    <div className="detail-item">
-                      <span className="detail-label">Rating</span>
-                      <span className="detail-value">⭐ {selectedPlace.rating}</span>
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-label">Precio</span>
-                      <span className="detail-value">{selectedPlace.priceRange}</span>
-                    </div>
-                    {selectedPlace.contact.phone && (
-                      <div className="detail-item">
-                        <span className="detail-label">Teléfono</span>
-                        <span className="detail-value">{selectedPlace.contact.phone}</span>
-                      </div>
-                    )}
-                    {selectedPlace.location.address && (
-                      <div className="detail-item">
-                        <span className="detail-label">Dirección</span>
-                        <span className="detail-value">{selectedPlace.location.address}</span>
-                      </div>
-                    )}
-                  </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                  style={{
+                    display: 'flex',
+                    gap: '16px',
+                    justifyContent: 'center',
+                    flexWrap: 'wrap'
+                  }}
+                >
+                  <button
+                    onClick={() => setActiveSection('map')}
+                    style={{
+                      padding: '16px 32px',
+                      background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: 'var(--radius-lg)',
+                      fontSize: '1rem',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      boxShadow: 'var(--shadow-lg)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px'
+                    }}
+                  >
+                    <MapPin size={20} />
+                    Explorar Mapa
+                  </button>
+                  <button
+                    style={{
+                      padding: '16px 32px',
+                      background: 'transparent',
+                      color: 'var(--text)',
+                      border: '2px solid var(--border)',
+                      borderRadius: 'var(--radius-lg)',
+                      fontSize: '1rem',
+                      fontWeight: 600,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Ver Guías
+                  </button>
+                </motion.div>
+              </div>
 
-                  <div className="modal-actions">
-                    <button
-                      className="action-button primary"
-                      onClick={() => toggleFavorite(selectedPlace)}
+              {/* Decorative Elements */}
+              <motion.div
+                animate={{
+                  y: [0, -20, 0],
+                  rotate: [0, 5, 0]
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                }}
+                style={{
+                  position: 'absolute',
+                  top: '20%',
+                  left: '10%',
+                  width: '120px',
+                  height: '120px',
+                  background: 'var(--primary-200)',
+                  borderRadius: '50%',
+                  opacity: 0.3,
+                  filter: 'blur(40px)'
+                }}
+              />
+              <motion.div
+                animate={{
+                  y: [0, 20, 0],
+                  rotate: [0, -5, 0]
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                }}
+                style={{
+                  position: 'absolute',
+                  bottom: '20%',
+                  right: '10%',
+                  width: '150px',
+                  height: '150px',
+                  background: 'var(--accent)',
+                  borderRadius: '50%',
+                  opacity: 0.2,
+                  filter: 'blur(40px)'
+                }}
+              />
+            </section>
+
+            {/* Features Section */}
+            <section style={{
+              padding: '120px 0',
+              background: 'var(--background)'
+            }}>
+              <div className="container">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  style={{ textAlign: 'center', marginBottom: '64px' }}
+                >
+                  <h2 style={{ marginBottom: '16px' }}>
+                    Descubre Filandia
+                  </h2>
+                  <p style={{ margin: '0 auto' }}>
+                    Experiencias únicas en el corazón del Eje Cafetero
+                  </p>
+                </motion.div>
+
+                <div className="grid grid-3">
+                  {[
+                    { icon: Coffee, title: 'Café de Origen', desc: 'Tours en fincas cafeteras auténticas' },
+                    { icon: MapPin, title: 'Miradores', desc: 'Vistas panorámicas del Quindío' },
+                    { icon: Building2, title: 'Balcones de Guadua', desc: 'Arquitectura tradicional única' },
+                    { icon: Utensils, title: 'Gastronomía', desc: 'Truchas y comida tradicional' },
+                    { icon: Star, title: 'Alojamiento', desc: 'Hoteles boutique con vistas' },
+                    { icon: Heart, title: 'Cultura', desc: 'Artesanías y tradiciones' }
+                  ].map((feature, index) => (
+                    <motion.div
+                      key={feature.title}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      style={{
+                        padding: '32px',
+                        background: 'var(--surface)',
+                        borderRadius: 'var(--radius-xl)',
+                        border: '1px solid var(--border)',
+                        textAlign: 'center',
+                        cursor: 'pointer',
+                        transition: 'all var(--transition)'
+                      }}
+                      whileHover={{
+                        transform: 'translateY(-8px)',
+                        boxShadow: 'var(--shadow-xl)',
+                        borderColor: 'var(--primary)'
+                      }}
                     >
-                      {isFavorite(selectedPlace.id) ? (
-                        <>
-                          <Heart size={18} fill="currentColor" />
-                          En favoritos
-                        </>
-                      ) : (
-                        <>
-                          <Heart size={18} />
-                          Agregar a favoritos
-                        </>
-                      )}
-                    </button>
-
-                    {selectedPlace.contact.whatsapp && (
-                      <a
-                        href={`https://wa.me/${selectedPlace.contact.whatsapp}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="action-button whatsapp"
-                      >
-                        💬 WhatsApp
-                      </a>
-                    )}
-                  </div>
+                      <div style={{
+                        width: '64px',
+                        height: '64px',
+                        background: 'var(--primary-50)',
+                        borderRadius: 'var(--radius-lg)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        margin: '0 auto 24px',
+                        color: 'var(--primary)'
+                      }}>
+                        <feature.icon size={32} />
+                      </div>
+                      <h3 style={{ marginBottom: '12px' }}>{feature.title}</h3>
+                      <p style={{ margin: '0' }}>{feature.desc}</p>
+                    </motion.div>
+                  ))}
                 </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </main>
+              </div>
+            </section>
+          </motion.div>
+        )}
+
+        {activeSection === 'map' && (
+          <motion.div
+            key="map"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{ flex: 1, paddingTop: '100px' }}
+          >
+            <div className="container" style={{ marginBottom: '32px' }}>
+              <h1>Mapa Interactivo</h1>
+              <p>Explora todos los lugares de Filandia en tiempo real</p>
+            </div>
+            <div style={{ height: 'calc(100vh - 200px)', margin: '0 auto', maxWidth: '1400px', padding: '0 24px' }}>
+              <AdvancedMap
+                places={places}
+                onPlaceSelect={(place) => console.log('Selected:', place)}
+                userLocation={null}
+              />
+            </div>
+          </motion.div>
+        )}
+
+        {activeSection === 'explore' && (
+          <motion.div
+            key="explore"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{ flex: 1, paddingTop: '100px' }}
+          >
+            <div className="container">
+              <h1>Explorar</h1>
+              <p>Próximamente: guías detalladas y rutas recomendadas</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
