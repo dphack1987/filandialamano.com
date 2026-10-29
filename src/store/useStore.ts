@@ -62,127 +62,113 @@ interface AppState {
 }
 
 export const useStore = create<AppState>()(
-  persist(
-    (set, get) => ({
-      // Language & Currency
-      language: 'es',
-      currency: 'COP',
-      setLanguage: (lang) => set({ language: lang }),
-      setCurrency: (curr) => set({ currency: curr }),
+  (set, get) => ({
+    // Language & Currency
+    language: 'es',
+    currency: 'COP',
+    setLanguage: (lang) => set({ language: lang }),
+    setCurrency: (curr) => set({ currency: curr }),
 
-      // Theme
-      theme: 'light',
-      setTheme: (theme) => set({ theme }),
+    // Theme
+    theme: 'light',
+    setTheme: (theme) => set({ theme }),
 
-      // Places
-      places: [],
-      setPlaces: (places) => set({ places }),
-      selectedPlace: null,
-      setSelectedPlace: (place) => set({ selectedPlace: place }),
+    // Places
+    places: [],
+    setPlaces: (places) => set({ places }),
+    selectedPlace: null,
+    setSelectedPlace: (place) => set({ selectedPlace: place }),
 
-      // Map
-      mapLayers: [
-        {
-          name: 'Calles',
-          url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-          attribution: '&copy; OpenStreetMap',
-          maxZoom: 19
-        },
-        {
-          name: 'Satélite',
-          url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-          attribution: '&copy; Esri',
-          maxZoom: 19
-        },
-        {
-          name: 'Terreno',
-          url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
-          attribution: '&copy; OpenTopoMap',
-          maxZoom: 17
-        },
-        {
-          name: 'Ciclismo',
-          url: 'https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png',
-          attribution: '&copy; Thunderforest',
-          maxZoom: 18
-        }
-      ],
-      selectedMapLayer: null,
-      setSelectedMapLayer: (layer) => set({ selectedMapLayer: layer }),
-      mapZoom: 14,
-      setMapZoom: (zoom) => set({ mapZoom: zoom }),
-      mapCenter: [4.695, -75.635],
-      setMapCenter: (center) => set({ mapCenter: center }),
+    // Map
+    mapLayers: [
+      {
+        name: 'Calles',
+        url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        attribution: '&copy; OpenStreetMap',
+        maxZoom: 19
+      },
+      {
+        name: 'Satélite',
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        attribution: '&copy; Esri',
+        maxZoom: 19
+      },
+      {
+        name: 'Terreno',
+        url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+        attribution: '&copy; OpenTopoMap',
+        maxZoom: 17
+      },
+      {
+        name: 'Ciclismo',
+        url: 'https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png',
+        attribution: '&copy; Thunderforest',
+        maxZoom: 18
+      }
+    ],
+    selectedMapLayer: null,
+    setSelectedMapLayer: (layer) => set({ selectedMapLayer: layer }),
+    mapZoom: 14,
+    setMapZoom: (zoom) => set({ mapZoom: zoom }),
+    mapCenter: [4.695, -75.635],
+    setMapCenter: (center) => set({ mapCenter: center }),
 
-      // Favorites
-      favorites: [],
-      addFavorite: (placeId, collection) => {
-        const { favorites } = get()
-        if (!favorites.some(f => f.placeId === placeId)) {
-          set({
-            favorites: [...favorites, { placeId, collection, dateAdded: new Date() }]
-          })
-        }
-      },
-      removeFavorite: (placeId) => {
-        set({ favorites: get().favorites.filter(f => f.placeId !== placeId) })
-      },
-      isFavorite: (placeId) => {
-        return get().favorites.some(f => f.placeId === placeId)
-      },
-
-      // Itineraries
-      itineraries: [],
-      addItinerary: (itinerary) => {
-        set({ itineraries: [...get().itineraries, itinerary] })
-      },
-      removeItinerary: (id) => {
-        set({ itineraries: get().itineraries.filter(i => i.id !== id) })
-      },
-      updateItinerary: (id, updates) => {
+    // Favorites
+    favorites: [],
+    addFavorite: (placeId, collection) => {
+      const { favorites } = get()
+      if (!favorites.some(f => f.placeId === placeId)) {
         set({
-          itineraries: get().itineraries.map(i =>
-            i.id === id ? { ...i, ...updates } : i
-          )
+          favorites: [...favorites, { placeId, collection, dateAdded: new Date() }]
         })
-      },
+      }
+    },
+    removeFavorite: (placeId) => {
+      set({ favorites: get().favorites.filter(f => f.placeId !== placeId) })
+    },
+    isFavorite: (placeId) => {
+      return get().favorites.some(f => f.placeId === placeId)
+    },
 
-      // User Location
-      userLocation: null,
-      setUserLocation: (location) => set({ userLocation: location }),
-
-      // Search
-      searchQuery: '',
-      setSearchQuery: (query) => set({ searchQuery: query }),
-      searchHistory: [],
-      addToSearchHistory: (query) => {
-        const { searchHistory } = get()
-        if (!searchHistory.includes(query)) {
-          set({ searchHistory: [query, ...searchHistory].slice(0, 10) })
-        }
-      },
-
-      // Filters
-      selectedCategory: null,
-      setSelectedCategory: (category) => set({ selectedCategory: category }),
-      priceRange: [0, 1000],
-      setPriceRange: (range) => set({ priceRange: range }),
-      ratingFilter: 0,
-      setRatingFilter: (rating) => set({ ratingFilter: rating }),
-      distanceFilter: 50,
-      setDistanceFilter: (distance) => set({ distanceFilter: distance })
-    }),
-    {
-      name: 'filandia-storage',
-      partialize: (state) => ({
-        language: state.language,
-        currency: state.currency,
-        theme: state.theme,
-        favorites: state.favorites,
-        itineraries: state.itineraries,
-        searchHistory: state.searchHistory,
-        selectedMapLayer: state.selectedMapLayer
+    // Itineraries
+    itineraries: [],
+    addItinerary: (itinerary) => {
+      set({ itineraries: [...get().itineraries, itinerary] })
+    },
+    removeItinerary: (id) => {
+      set({ itineraries: get().itineraries.filter(i => i.id !== id) })
+    },
+    updateItinerary: (id, updates) => {
+      set({
+        itineraries: get().itineraries.map(i =>
+          i.id === id ? { ...i, ...updates } : i
+        )
       })
-    }
-  )
+    },
+
+    // User Location
+    userLocation: null,
+    setUserLocation: (location) => set({ userLocation: location }),
+
+    // Search
+    searchQuery: '',
+    setSearchQuery: (query) => set({ searchQuery: query }),
+    searchHistory: [],
+    addToSearchHistory: (query) => {
+      const { searchHistory } = get()
+      if (!searchHistory.includes(query)) {
+        set({ searchHistory: [query, ...searchHistory].slice(0, 10) })
+      }
+    },
+
+    // Filters
+    selectedCategory: null,
+    setSelectedCategory: (category) => set({ selectedCategory: category }),
+    priceRange: [0, 1000],
+    setPriceRange: (range) => set({ priceRange: range }),
+    ratingFilter: 0,
+    setRatingFilter: (rating) => set({ ratingFilter: rating }),
+    distanceFilter: 50,
+    setDistanceFilter: (distance) => set({ distanceFilter: distance })
+  })
 )
