@@ -72,18 +72,19 @@ function App() {
           }}
           onClick={() => setActiveSection('home')}
         >
-          <div style={{
-            width: '40px',
-            height: '40px',
-            background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))',
-            borderRadius: 'var(--radius)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'white'
-          }}>
-            <MapPin size={20} />
-          </div>
+          <img
+            src="/logo_filandialamano.jfif"
+            alt="Filandia a la Mano"
+            style={{
+              width: '48px',
+              height: '48px',
+              borderRadius: 'var(--radius)',
+              objectFit: 'contain',
+              background: 'white',
+              padding: '4px',
+              boxShadow: 'var(--shadow-md)'
+            }}
+          />
           <div>
             <div style={{ fontWeight: 700, fontSize: '1.125rem', color: 'var(--text)' }}>
               Filandia
@@ -190,6 +191,24 @@ function App() {
                 zIndex: 2
               }}>
                 <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, type: 'spring' }}
+                  style={{ marginBottom: '48px' }}
+                >
+                  <img
+                    src="/logo_filandialamano.jfif"
+                    alt="Filandia a la Mano Logo"
+                    style={{
+                      width: 'clamp(200px, 30vw, 400px)',
+                      height: 'auto',
+                      maxWidth: '100%',
+                      filter: 'drop-shadow(0 20px 40px rgba(16, 185, 129, 0.3))'
+                    }}
+                  />
+                </motion.div>
+
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
@@ -216,7 +235,7 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                   style={{
-                    fontSize: 'clamp(3rem, 8vw, 5rem)',
+                    fontSize: 'clamp(2.5rem, 6vw, 4rem)',
                     fontWeight: 800,
                     background: 'linear-gradient(135deg, var(--text) 0%, var(--primary) 100%)',
                     WebkitBackgroundClip: 'text',
@@ -225,9 +244,7 @@ function App() {
                     letterSpacing: '-0.02em'
                   }}
                 >
-                  Filandia
-                  <br />
-                  <span style={{ color: 'var(--primary)' }}>a la Mano</span>
+                  Descubre el Corazón del Quindío
                 </motion.h1>
 
                 <motion.p
