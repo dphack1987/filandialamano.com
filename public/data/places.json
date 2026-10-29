@@ -44,7 +44,9 @@
       "active": true,
       "photos": [
         "/imagenes-filandia/mirador-1.webp",
-        "/imagenes-filandia/mirador-2.webp"
+        "/imagenes-filandia/mirador-2.webp",
+        "/imagenes-filandia/mirador-colina.webp",
+        "/imagenes-filandia/mirador-quindio.webp"
       ],
       "isPautante": false
     },
@@ -81,7 +83,9 @@
       "verified": true,
       "active": true,
       "photos": [
-        "/imagenes-filandia/iglesia-1.webp"
+        "/imagenes-filandia/iglesia-1.webp",
+        "/imagenes-filandia/iglesia-2.webp",
+        "/imagenes-filandia/iglesia-3.webp"
       ],
       "isPautante": false
     },
@@ -116,7 +120,9 @@
       "verified": true,
       "active": true,
       "photos": [
-        "/imagenes-filandia/plaza-1.webp"
+        "/imagenes-filandia/plaza-1.webp",
+        "/imagenes-filandia/centro-1.webp",
+        "/imagenes-filandia/centro-2.webp"
       ],
       "isPautante": false
     },
@@ -154,7 +160,8 @@
       "verified": true,
       "active": true,
       "photos": [
-        "/imagenes-filandia/cultura-1.webp"
+        "/imagenes-filandia/cultura-1.webp",
+        "/imagenes-filandia/centro-2.webp"
       ],
       "isPautante": false
     },
@@ -240,7 +247,8 @@
       },
       "photos": [
         "/imagenes-filandia/hotel-1.webp",
-        "/imagenes-filandia/hotel-2.webp"
+        "/imagenes-filandia/hotel-2.webp",
+        "/imagenes-filandia/casa-hotel-1.webp"
       ],
       "isPautante": true,
       "actionTarget": {
@@ -332,7 +340,8 @@
       },
       "photos": [
         "/imagenes-filandia/casa-hotel-1.webp",
-        "/imagenes-filandia/casa-hotel-2.webp"
+        "/imagenes-filandia/hotel-2.webp",
+        "/imagenes-filandia/centro-1.webp"
       ],
       "isPautante": true,
       "actionTarget": {
@@ -422,7 +431,7 @@
       },
       "photos": [
         "/imagenes-filandia/hostal-1.webp",
-        "/imagenes-filandia/hostal-2.webp"
+        "/imagenes-filandia/centro-2.webp"
       ],
       "isPautante": true,
       "actionTarget": {
@@ -492,7 +501,9 @@
         "tariff": "$35.000 COP por persona"
       },
       "photos": [
-        "/imagenes-filandia/finca-cafe-1.webp"
+        "/imagenes-filandia/cafe-1.webp",
+        "/imagenes-filandia/atardecer-1.webp",
+        "/imagenes-filandia/camping-1.webp"
       ],
       "isPautante": true
     },
@@ -547,7 +558,8 @@
         ]
       },
       "photos": [
-        "/imagenes-filandia/artesanias-1.webp"
+        "/imagenes-filandia/artesanias-1.webp",
+        "/imagenes-filandia/centro-1.webp"
       ],
       "isPautante": true
     },
@@ -628,7 +640,8 @@
         "bookingNotes": "Reservar por WhatsApp con 24 horas de anticipación"
       },
       "photos": [
-        "/imagenes-filandia/camping-1.webp"
+        "/imagenes-filandia/camping-1.webp",
+        "/imagenes-filandia/senderismo-1.webp"
       ],
       "isPautante": true
     },
@@ -667,7 +680,8 @@
       "verified": true,
       "active": true,
       "photos": [
-        "/imagenes-filandia/transporte-1.webp"
+        "/imagenes-filandia/transporte-1.webp",
+        "/imagenes-filandia/plaza-1.webp"
       ],
       "isPautante": true
     },
@@ -732,7 +746,8 @@
         "tariff": "Gratis"
       },
       "photos": [
-        "/imagenes-filandia/senderismo-1.webp"
+        "/imagenes-filandia/senderismo-1.webp",
+        "/imagenes-filandia/mirador-colina.webp"
       ],
       "isPautante": false
     },
@@ -786,7 +801,8 @@
         ]
       },
       "photos": [
-        "/imagenes-filandia/tienda-cafe-1.webp"
+        "/imagenes-filandia/tienda-cafe-1.webp",
+        "/imagenes-filandia/cafe-1.webp"
       ],
       "isPautante": true
     },
@@ -841,7 +857,8 @@
         "ticketRequired": false
       },
       "photos": [
-        "/imagenes-filandia/festival-1.webp"
+        "/imagenes-filandia/festival-1.webp",
+        "/imagenes-filandia/atardecer-2.webp"
       ],
       "isPautante": false
     },
@@ -936,7 +953,9 @@
       },
       "photos": [
         "/pautantes/hotel-boutique-filandia/imagenes/fachada-hotel.webp",
-        "/pautantes/hotel-boutique-filandia/imagenes/habitacion-deluxe.webp"
+        "/pautantes/hotel-boutique-filandia/imagenes/habitacion-deluxe.webp",
+        "/pautantes/hotel-boutique-filandia/imagenes/suite-premium.webp",
+        "/pautantes/hotel-boutique-filandia/imagenes/terraza-vista.webp"
       ],
       "isPautante": true,
       "actionTarget": {
@@ -1129,7 +1148,7 @@
       },
       "photos": [
         "/imagenes-filandia/asadero-1.webp",
-        "/imagenes-filandia/asadero-2.webp"
+        "/imagenes-filandia/atardecer-1.webp"
       ],
       "isPautante": true,
       "actionTarget": {
@@ -1218,7 +1237,7 @@
       },
       "photos": [
         "/imagenes-filandia/dulces-1.webp",
-        "/imagenes-filandia/dulces-2.webp"
+        "/imagenes-filandia/cafe-1.webp"
       ],
       "isPautante": true,
       "actionTarget": {
@@ -1359,7 +1378,8 @@
       },
       "photos": [
         "/imagenes-filandia/cafe-mirador-1.webp",
-        "/imagenes-filandia/cafe-mirador-2.webp"
+        "/imagenes-filandia/cafe-mirador-2.webp",
+        "/imagenes-filandia/mirador-1.webp"
       ],
       "isPautante": true,
       "actionTarget": {
@@ -1425,7 +1445,7 @@
       },
       "photos": [
         "/imagenes-filandia/tintin-cafe-1.webp",
-        "/imagenes-filandia/tintin-cafe-2.webp"
+        "/imagenes-filandia/cafe-1.webp"
       ],
       "isPautante": true,
       "actionTarget": {

@@ -1,0 +1,41 @@
+# Créditos de imágenes (Wikimedia Commons / CC)
+
+Imágenes de referencia descargadas para diseño. Verificar licencia y autoría antes de producción comercial.
+
+- public\imagenes-filandia\mirador-1.webp — Wikimedia Commons - Mirador de Filandia
+- public\imagenes-filandia\mirador-2.webp — Wikimedia Commons - Mirador filandia
+- public\imagenes-filandia\mirador-colina.webp — Pedro Agudelo Gaona / Wikimedia Commons / CC BY 3.0
+- public\imagenes-filandia\mirador-quindio.webp — Wikimedia Commons - El mirador del Quindío
+- public\imagenes-filandia\senderismo-1.webp — Wikimedia Commons - Sendero Filandia
+- public\imagenes-filandia\camping-1.webp — Wikimedia Commons - Bosque Barbas-Bremen
+- public\imagenes-filandia\iglesia-1.webp — Wikimedia Commons - Iglesia Inmaculada Concepción
+- public\imagenes-filandia\plaza-1.webp — Wikimedia Commons - Calle 7
+- public\imagenes-filandia\cultura-1.webp — Wikimedia Commons - Building in Filandia
+- public\imagenes-filandia\centro-1.webp — Wikimedia Commons - Calle del Convento
+- public\imagenes-filandia\centro-2.webp — Wikimedia Commons - Calle 7 01
+- public\imagenes-filandia\atardecer-1.webp — Wikimedia Commons - Atardecer en Filandia
+- public\imagenes-filandia\atardecer-2.webp — Wikimedia Commons - Atardecer en Filandia
+- public\imagenes-filandia\hotel-1.webp — Wikimedia Commons - Hotel Tibouchina
+- public\imagenes-filandia\hotel-2.webp — Wikimedia Commons - Building in Filandia 02
+- public\imagenes-filandia\casa-hotel-1.webp — Wikimedia Commons - Calle 7 02
+- public\imagenes-filandia\hostal-1.webp — Wikimedia Commons - Calle de la Cruz
+- public\imagenes-filandia\artesanias-1.webp — Wikimedia Commons - Crafts Colombia Filandia
+- public\imagenes-filandia\cafe-1.webp — Wikimedia Commons - La Casa del Pandebono
+- public\imagenes-filandia\cafe-mirador-1.webp — Wikimedia Commons - La Casa del Pandebono
+- public\imagenes-filandia\cafe-mirador-2.webp — Pedro Agudelo Gaona / Wikimedia Commons / CC BY 3.0
+- public\imagenes-filandia\tintin-cafe-1.webp — Wikimedia Commons - La Casa del Pandebono
+- public\imagenes-filandia\tienda-cafe-1.webp — Wikimedia Commons - Optica Estrella Llano
+- public\imagenes-filandia\asadero-1.webp — Wikimedia Commons - La Casa del Pandebono
+- public\imagenes-filandia\dulces-1.webp — Wikimedia Commons - La Casa del Pandebono
+- public\imagenes-filandia\festival-1.webp — Wikimedia Commons - Atardecer en Filandia
+- public\imagenes-filandia\transporte-1.webp — Wikimedia Commons - Calle de Filandia
+- public\pautantes\hotel-boutique-filandia\imagenes\fachada-hotel.webp — Wikimedia Commons - Hotel Tibouchina
+- public\pautantes\hotel-boutique-filandia\imagenes\habitacion-deluxe.webp — Wikimedia Commons - Building 02
+- public\pautantes\hotel-boutique-filandia\imagenes\suite-premium.webp — Wikimedia Commons - Calle 7
+- public\pautantes\hotel-boutique-filandia\imagenes\terraza-vista.webp — Wikimedia Commons - Atardecer
+- public\pautantes\hotel-boutique-filandia\imagenes\restaurante-hotel.webp — Wikimedia Commons - Casa del Pandebono
+- public\pautantes\hotel-boutique-filandia\imagenes\spa-jacuzzi.webp — Pedro Agudelo Gaona / Wikimedia / CC BY 3.0
+- public\pautantes\restaurante-truchas-filandia\imagenes\trucha-plancha.webp — Wikimedia Commons - Casa del Pandebono (placeholder food vibe)
+- public\pautantes\restaurante-truchas-filandia\imagenes\terraza-vista.webp — Wikimedia Commons - Atardecer Filandia
+- public\pautantes\cafe-tradicion-filandia\imagenes\cafeteria-interior.webp — Wikimedia Commons - Casa del Pandebono
+- public\pautantes\cafe-tradicion-filandia\imagenes\cafe-tinto.webp — Wikimedia Commons - Casa del Pandebono

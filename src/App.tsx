@@ -8,11 +8,13 @@ import { usePlaces } from './hooks/usePlaces'
 import MapView from './components/map/MapView'
 import ThemeToggle from './components/ui/ThemeToggle'
 import PlaceCard from './components/places/PlaceCard'
+import ContactSection from './components/contact/ContactSection'
 import { categoryMeta } from './constants/categories'
+import { PROJECT_CONTACT, SITE } from './constants/contact'
 import './styles.css'
 import './App.css'
 
-type Section = 'home' | 'map' | 'explore'
+type Section = 'home' | 'map' | 'explore' | 'contact'
 
 const CATEGORY_ICONS: Record<string, typeof Hotel> = {
   alojamientos: Hotel,
@@ -113,8 +115,13 @@ function App() {
         </motion.div>
 
         <div className={`app-nav-links ${mobileMenuOpen ? 'open' : ''}`}>
-          {(['home', 'map', 'explore'] as Section[]).map((key, index) => {
-            const labels: Record<Section, string> = { home: 'Inicio', map: 'Mapa', explore: 'Explorar' }
+          {(['home', 'map', 'explore', 'contact'] as Section[]).map((key, index) => {
+            const labels: Record<Section, string> = {
+              home: 'Inicio',
+              map: 'Mapa',
+              explore: 'Explorar',
+              contact: 'Contacto',
+            }
             return (
               <motion.button
                 key={key}
@@ -310,6 +317,8 @@ function App() {
                 </div>
               </section>
             )}
+
+            <ContactSection />
           </motion.main>
         )}
 
@@ -346,7 +355,52 @@ function App() {
             </div>
           </motion.main>
         )}
+        {activeSection === 'contact' && (
+          <motion.main
+            key="contact"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="app-main"
+          >
+            <div className="container explore-page contact-page">
+              <h1>Contacto</h1>
+              <p>
+                Publicidad, alianzas o inclusión de tu negocio en el mapa de Filandia.
+              </p>
+            </div>
+            <ContactSection />
+          </motion.main>
+        )}
       </AnimatePresence>
+
+      <footer className="app-footer">
+        <div className="container footer-inner">
+          <div className="footer-brand">
+            <img src="/logo_filandialamano.jfif" alt="Filandia a la Mano" />
+            <div>
+              <strong>Filandia a la Mano</strong>
+              <span>Mapa turístico del Quindío</span>
+            </div>
+          </div>
+          <div className="footer-links">
+            <a href="#mapa" onClick={() => setActiveSection('map')}>Mapa</a>
+            <a href={SITE.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href={SITE.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a
+              className="footer-wa"
+              href={PROJECT_CONTACT.whatsappDirect}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+          </div>
+          <p className="footer-copy">
+            © {new Date().getFullYear()} Filandia a la Mano · {PROJECT_CONTACT.email} · {PROJECT_CONTACT.phone}
+          </p>
+        </div>
+      </footer>
     </div>
   )
 }
