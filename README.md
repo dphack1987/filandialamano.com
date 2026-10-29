@@ -214,3 +214,4 @@ Este proyecto es un fork mejorado de salentoalamano.com con las siguientes mejor
 ## 📄 Licencia
 
 Propiedad privada - Todos los derechos reservados
+# Deploy fix
