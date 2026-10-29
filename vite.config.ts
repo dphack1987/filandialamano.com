@@ -17,29 +17,17 @@ export default defineConfig({
             if (id.includes('react-dom') || id.includes('react/')) {
               return 'react-core'
             }
-            if (id.includes('react-helmet')) {
-              return 'seo-vendor'
-            }
             if (id.includes('leaflet') || id.includes('react-leaflet')) {
               return 'leaflet-vendor'
             }
             if (id.includes('lucide-react')) {
               return 'icons-vendor'
             }
-            if (id.includes('qrcode')) {
-              return 'qr-vendor'
-            }
             if (id.includes('framer-motion')) {
               return 'animation-vendor'
             }
             if (id.includes('zustand')) {
               return 'state-vendor'
-            }
-            if (id.includes('@tanstack/react-query')) {
-              return 'query-vendor'
-            }
-            if (id.includes('react-virtuoso')) {
-              return 'virtuoso-vendor'
             }
             return 'vendor'
           }
@@ -76,11 +64,8 @@ export default defineConfig({
       'react-dom',
       'leaflet',
       'lucide-react',
-      'qrcode',
       'framer-motion',
-      'zustand',
-      '@tanstack/react-query',
-      'react-virtuoso'
+      'zustand'
     ],
     force: false
   }

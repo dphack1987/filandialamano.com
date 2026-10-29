@@ -1,0 +1,93 @@
+{
+  "id": 101,
+  "name": "Restaurante Las Truchas de Filandia",
+  "type": "Restaurantes",
+  "slug": "restaurante-truchas-filandia",
+  "category": "Gastronomía Tradicional",
+  "status": "demo",
+  "description": "El mejor restaurante de truchas en Filandia. Truchas frescas del río, preparadas a la plancha, al ajillo o cocinadas en hoja de plátano. Ambiente tradicional con vista al paisaje cafetero.",
+  "priceRange": "$$",
+  "rating": "4.7",
+  "reviews": 284,
+  "specialties": [
+    "Trucha a la plancha",
+    "Trucha al ajillo",
+    "Trucha en hoja de plátano",
+    "Patacón con queso",
+    "Arepas quindianas",
+    "Sancocho de gallina"
+  ],
+  "menu": [
+    {
+      "name": "Trucha Completa",
+      "description": "Trucha con patacón, arroz y ensalada",
+      "price": 35000
+    },
+    {
+      "name": "Trucha Gourmet",
+      "description": "Trucha con camarones y salsa especial",
+      "price": 45000
+    },
+    {
+      "name": "Combo Familiar",
+      "description": "2 truchas + patacones + bebidas",
+      "price": 75000
+    }
+  ],
+  "features": [
+    "Vista panorámica",
+    "Terraza al aire libre",
+    "Ambiente familiar",
+    "Música en vivo (fines de semana)",
+    "Zona de juegos para niños",
+    "Estacionamiento gratuito"
+  ],
+  "contact": {
+    "phone": "+57 606 850 2345",
+    "whatsapp": "573158502345",
+    "email": "info@truchasfilandia.com"
+  },
+  "location": {
+    "lat": 4.6945,
+    "lng": -75.634,
+    "address": "Calle 6 #5-30, Filandia, Quindío",
+    "landmark": "A 1 cuadra de la plaza"
+  },
+  "operatingHours": {
+    "lunch": "12:00 PM - 4:00 PM",
+    "dinner": "6:00 PM - 10:00 PM",
+    "notes": "Abierto todos los días"
+  },
+  "capacity": 80,
+  "reservations": "Recomendado fines de semana",
+  "paymentMethods": ["Efectivo", "Tarjeta", "Nequi", "Daviplata"],
+  "gallery": [
+    "fachada-restaurante.webp",
+    "trucha-plancha.webp",
+    "terraza-vista.webp",
+    "ambiente-restaurante.webp",
+    "patacones.webp"
+  ],
+  "social": {
+    "instagram": "@truchasfilandia",
+    "facebook": "TruchasFilandia"
+  },
+  "seo": {
+    "title": "Restaurante Las Truchas de Filandia - Mejor Comida Tradicional",
+    "description": "Disfruta las mejores truchas de Filandia en un ambiente tradicional con vistas panorámicas. Especialidad en gastronomía quindiana.",
+    "keywords": ["restaurante filandia", "truchas filandia", "comida quindio", "gastronomia tradicional", "patacon filandia"]
+  },
+  "adPackage": {
+    "tier": "standard",
+    "features": [
+      "Página en el mapa",
+      "Galería de hasta 6 fotos",
+      "Botón de WhatsApp directo",
+      "Menú digital",
+      "Horarios actualizados",
+      "Estadísticas básicas"
+    ],
+    "price": 150000,
+    "duration": "mensual"
+  }
+}

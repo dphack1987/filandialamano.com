@@ -114,28 +114,46 @@ El proyecto está preparado para ser una Progressive Web App:
 - Install prompt personalizado
 - Offline ready con IndexedDB
 
-## 🚀 Despliegue
+## 🚀 Despliegue en Vercel
 
-### Vercel
+### Paso 1: Conectar Repositorio a Vercel
 
-```bash
-# Conectar repo a Vercel
-vercel
+1. Ve a [vercel.com](https://vercel.com) e inicia sesión con tu cuenta de GitHub
+2. Clic en "Add New Project"
+3. Selecciona el repositorio `dphack1987/filandialamano.com`
+4. Vercel detectará automáticamente la configuración desde `vercel.json`
 
-# Configuración en Vercel:
-# - Build Command: npm run build
-# - Output Directory: dist
-# - Framework: Vite
+### Configuración Automática (vercel.json)
+
+El proyecto incluye `vercel.json` con la configuración:
+```json
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "installCommand": "npm install"
+}
 ```
 
-### GitHub Pages
+### Paso 2: Deploy
 
-```bash
-# Build
-npm run build
+1. Clic en "Deploy"
+2. Vercel instalará dependencias y hará el build
+3. En ~2-3 minutos tu sitio estará en vivo
+4. Vercel te asignará un dominio: `https://filandia-mapa-turistico.vercel.app`
 
-# Deploy a gh-pages
-```
+### Paso 3: Dominio Personalizado (Opcional)
+
+1. En Vercel Dashboard → Settings → Domains
+2. Agrega tu dominio: `www.filandialamano.com`
+3. Configura los DNS según las instrucciones de Vercel
+
+### Variables de Entorno (Opcional)
+
+Actualmente no requiere variables de entorno, pero si necesitas agregar alguna:
+1. Vercel Dashboard → Settings → Environment Variables
+2. Agrega las variables necesarias
+3. Redeploy el proyecto
 
 ## 📊 SEO
 

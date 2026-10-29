@@ -1,10 +1,7 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import 'leaflet.markercluster/dist/MarkerCluster.css'
-import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
-import MarkerClusterGroup from 'leaflet.markercluster'
 import { Place, MapLayer } from '../../types'
 import { useStore } from '../../store/useStore'
 
@@ -24,14 +21,7 @@ interface AdvancedMapProps {
 
 function MapController({ places, onPlaceSelect, userLocation }: AdvancedMapProps) {
   const map = useMap()
-  const markerClusterRef = useRef<MarkerClusterGroup | null>(null)
   const { selectedMapLayer, mapZoom, mapCenter, setMapZoom, setMapCenter } = useStore()
-
-  useEffect(() => {
-    if (markerClusterRef.current) {
-      markerClusterRef.current.clearLayers()
-    }
-  }, [places])
 
   useEffect(() => {
     if (selectedMapLayer) {
@@ -71,7 +61,6 @@ function MapController({ places, onPlaceSelect, userLocation }: AdvancedMapProps
 
 export default function AdvancedMap({ places, onPlaceSelect, userLocation }: AdvancedMapProps) {
   const { mapCenter, mapZoom, selectedMapLayer } = useStore()
-  const markerClusterRef = useRef<MarkerClusterGroup | null>(null)
 
   const activeLayer = selectedMapLayer || {
     name: 'Calles',
@@ -139,77 +128,40 @@ export default function AdvancedMap({ places, onPlaceSelect, userLocation }: Adv
           maxZoom={activeLayer.maxZoom || 19}
         />
 
-        <MarkerClusterGroup
-          ref={markerClusterRef}
-          chunkedLoading
-          maxClusterRadius={50}
-          showCoverageOnHover={false}
-          zoomToBoundsOnClick={true}
-          spiderfyOnMaxZoom={true}
-          iconCreateFunction={(cluster) => {
-            const childCount = cluster.getChildCount()
-            const color = childCount > 20 ? '#e76c52' : childCount > 10 ? '#f4a261' : '#56755b'
-
-            return L.divIcon({
-              html: `
-                <div style="
-                  background-color: ${color};
-                  width: ${40 + Math.min(childCount, 10)}px;
-                  height: ${40 + Math.min(childCount, 10)}px;
-                  border-radius: 50%;
-                  border: 3px solid white;
-                  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  color: white;
-                  font-size: ${14 + Math.min(childCount, 4)}px;
-                  font-weight: bold;
-                ">
-                  ${childCount}
+        {places.map((place) => (
+          place.location?.lat && place.location?.lng && (
+            <Marker
+              key={place.id}
+              position={[place.location.lat, place.location.lng]}
+              icon={createCustomIcon(place)}
+              eventHandlers={{
+                click: () => {
+                  if (onPlaceSelect) onPlaceSelect(place)
+                }
+              }}
+            >
+              <Popup>
+                <div className="map-popup">
+                  <h3>{place.name}</h3>
+                  <p className="popup-type">{place.type}</p>
+                  <p className="popup-description">{place.description.substring(0, 100)}...</p>
+                  <div className="popup-rating">⭐ {place.rating} estrellas</div>
+                  <div className="popup-price">{place.priceRange}</div>
+                  {place.contact.whatsapp && (
+                    <a
+                      href={`https://wa.me/${place.contact.whatsapp}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="popup-whatsapp"
+                    >
+                      💬 WhatsApp
+                    </a>
+                  )}
                 </div>
-              `,
-              className: 'custom-cluster-icon',
-              iconSize: [50, 50],
-              iconAnchor: [25, 25]
-            })
-          }}
-        >
-          {places.map((place) => (
-            place.location?.lat && place.location?.lng && (
-              <Marker
-                key={place.id}
-                position={[place.location.lat, place.location.lng]}
-                icon={createCustomIcon(place)}
-                eventHandlers={{
-                  click: () => {
-                    if (onPlaceSelect) onPlaceSelect(place)
-                  }
-                }}
-              >
-                <Popup>
-                  <div className="map-popup">
-                    <h3>{place.name}</h3>
-                    <p className="popup-type">{place.type}</p>
-                    <p className="popup-description">{place.description.substring(0, 100)}...</p>
-                    <div className="popup-rating">⭐ {place.rating} estrellas</div>
-                    <div className="popup-price">{place.priceRange}</div>
-                    {place.contact.whatsapp && (
-                      <a
-                        href={`https://wa.me/${place.contact.whatsapp}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="popup-whatsapp"
-                      >
-                        💬 WhatsApp
-                      </a>
-                    )}
-                  </div>
-                </Popup>
-              </Marker>
-            )
-          ))}
-        </MarkerClusterGroup>
+              </Popup>
+            </Marker>
+          )
+        ))}
 
         {userLocation && (
           <Marker

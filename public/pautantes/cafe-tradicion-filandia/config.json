@@ -1,0 +1,100 @@
+{
+  "id": 102,
+  "name": "Café Tradición de Filandia",
+  "type": "Cafeterías",
+  "slug": "cafe-tradicion-filandia",
+  "category": "Café de Origen",
+  "status": "demo",
+  "description": "Cafetería artesanal con café 100% de origen del Quindío. Tours de café, degustaciones, y venta de café tostado en casa. Experiencia auténtica del eje cafetero.",
+  "priceRange": "$",
+  "rating": "4.8",
+  "reviews": 156,
+  "products": [
+    {
+      "name": "Tinto Filandia",
+      "description": "Café de origen, preparación tradicional",
+      "price": 5000
+    },
+    {
+      "name": "Cappuccino Artesanal",
+      "description": "Café espresso con leche espumada y cacao",
+      "price": 12000
+    },
+    {
+      "name": "Tour de Café",
+      "description": "Recorrido por finca cafetera + degustación",
+      "price": 35000
+    }
+  ],
+  "features": [
+    "Café 100% de origen",
+    "Tostado en casa",
+    "Tours de café",
+    "Degustaciones",
+    "Venta de café al por mayor",
+    "WiFi gratuito",
+    "Terraza con vista",
+    "Libros sobre café"
+  ],
+  "coffeeVarieties": [
+    "Caturra",
+    "Colombia",
+    "Castillo",
+    "Geisha Premium"
+  ],
+  "contact": {
+    "phone": "+57 606 850 3456",
+    "whatsapp": "573158503456",
+    "email": "hola@cafetradicion.com"
+  },
+  "location": {
+    "lat": 4.6955,
+    "lng": -75.6355,
+    "address": "Carrera 6 #6-20, Filandia, Quindío",
+    "landmark": "Frente a la iglesia"
+  },
+  "operatingHours": {
+    "open": "7:00 AM",
+    "close": "7:00 PM",
+    "notes": "Abierto todos los días"
+  },
+  "services": [
+    "Venta de café en grano",
+    "Venta de café molido",
+    "Suscripciones mensuales",
+    "Envíos nacionales",
+    "Cursos de barismo",
+    "Tours guiados"
+  ],
+  "gallery": [
+    "cafeteria-interior.webp",
+    "cafe-tinto.webp",
+    "tour-cafe.webp",
+    "granos-cafe.webp",
+    "tienda-cafe.webp"
+  ],
+  "social": {
+    "instagram": "@cafetradicionfilandia",
+    "facebook": "CafeTradicionFilandia"
+  },
+  "seo": {
+    "title": "Café Tradición de Filandia - Café de Origen del Quindío",
+    "description": "Cafetería artesanal con café 100% de origen del Quindío. Tours de café, degustaciones y venta de café tostado en casa.",
+    "keywords": ["cafe filandia", "cafe quindio", "tour cafe", "cafe origen", "comprar cafe quindio"]
+  },
+  "adPackage": {
+    "tier": "premium",
+    "features": [
+      "Página destacada",
+      "Galería de hasta 10 fotos",
+      "Videos de tours",
+      "E-commerce integrado",
+      "Sistema de reservas",
+      "Blog de café",
+      "SEO avanzado",
+      "Analytics detallado"
+    ],
+    "price": 200000,
+    "duration": "mensual"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "id": 100,
+  "name": "Hotel Boutique Filandia",
+  "type": "Alojamientos",
+  "slug": "hotel-boutique-filandia",
+  "category": "Hotel Boutique",
+  "status": "demo",
+  "description": "Hotel boutique de lujo con vistas panorámicas al valle del Quindío. Desayuno incluido, spa, wifi de alta velocidad y atención personalizada. Ideal para parejas y viajeros exigentes.",
+  "priceRange": "$$$$",
+  "rating": "4.9",
+  "reviews": 127,
+  "features": [
+    "Vistas panorámicas",
+    "Desayuno gourmet incluido",
+    "Spa y jacuzzi",
+    "WiFi de alta velocidad",
+    "Parqueadero privado",
+    "Room service 24/7",
+    "Terraza con chimenea",
+    "Bar exclusivo"
+  ],
+  "amenities": [
+    "Aire acondicionado",
+    "TV 4K",
+    "Mini bar",
+    "Cafetera",
+    "Secador de pelo",
+    "Bañera de hidromasaje",
+    "Balcón privado"
+  ],
+  "roomTypes": [
+    {
+      "name": "Habitación Deluxe",
+      "capacity": 2,
+      "price": 450000,
+      "features": ["Vista al valle", "King bed", "Balcon"]
+    },
+    {
+      "name": "Suite Premium",
+      "capacity": 2,
+      "price": 650000,
+      "features": ["Vista panorámica", "King bed", "Jacuzzi", "Terraza"]
+    },
+    {
+      "name": "Suite Familiar",
+      "capacity": 4,
+      "price": 850000,
+      "features": ["Dos habitaciones", "Sala", "Vista panorámica", "Jacuzzi"]
+    }
+  ],
+  "contact": {
+    "phone": "+57 606 850 1234",
+    "whatsapp": "573158501234",
+    "email": "reservas@hotelboutiquefilandia.com",
+    "website": "https://hotelboutiquefilandia.com"
+  },
+  "location": {
+    "lat": 4.696,
+    "lng": -75.633,
+    "address": "Calle 7 #6-15, Filandia, Quindío",
+    "landmark": "A 2 cuadras del mirador"
+  },
+  "operatingHours": {
+    "checkIn": "3:00 PM",
+    "checkOut": "12:00 PM",
+    "reception": "24/7"
+  },
+  "policies": [
+    "Cancelación gratuita hasta 48h antes",
+    "No se aceptan mascotas",
+    "Check-in temprano sujeto a disponibilidad",
+    "Pago anticipado requerido"
+  ],
+  "gallery": [
+    "fachada-hotel.webp",
+    "habitacion-deluxe.webp",
+    "suite-premium.webp",
+    "terraza-vista.webp",
+    "restaurante-hotel.webp",
+    "spa-jacuzzi.webp"
+  ],
+  "social": {
+    "instagram": "@hotelboutiquefilandia",
+    "facebook": "HotelBoutiqueFilandia",
+    "tripadvisor": "Hotel Boutique Filandia"
+  },
+  "seo": {
+    "title": "Hotel Boutique Filandia - Alojamiento de Lujo en el Quindío",
+    "description": "Hotel boutique de lujo en Filandia con vistas panorámicas, spa, desayuno incluido. La mejor experiencia de alojamiento en el Quindío.",
+    "keywords": ["hotel filandia", "alojamiento quindio", "hotel boutique", "hotel lujo", "mirador filandia"]
+  },
+  "adPackage": {
+    "tier": "premium",
+    "features": [
+      "Página destacada en el mapa",
+      "Galería de hasta 12 fotos",
+      "Videos promocionales",
+      "Botón de WhatsApp directo",
+      "Sistema de reservas integrado",
+      "Reviews verificadas",
+      "Estadísticas de visitas",
+      "SEO avanzado",
+      "Prioridad en búsquedas"
+    ],
+    "price": 250000,
+    "duration": "mensual"
+  }
+}
