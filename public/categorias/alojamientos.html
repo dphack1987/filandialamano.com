@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Hoteles, fincas y hospedajes para descansar en Filandia" />
+    <title>Alojamientos | Filandia a la Mano</title>
+    <link rel="canonical" href="https://www.Filandiaalamano.com/categorias/alojamientos.html" />
+    
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" />
+
+    <style>
+      :root {
+        --paper: #f5f1e8;
+        --ink: #1f2d26;
+        --line: #d9d0bf;
+        --coral: #dd7f5d;
+        --green: #5a7d63;
+        --yellow: #e7c77b;
+        --white: #fff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink);
+      }
+      a { color: inherit; text-decoration: none; }
+      .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px 80px; }
+      .topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
+      .brand { font-size: 20px; font-weight: 700; }
+      .brand { display: inline-flex; align-items: center; gap: 10px; }
+      .brand-logo { width: 42px; height: 42px; object-fit: contain; border-radius: 50%; }
+      .nav-link { background: var(--white); border: 1px solid var(--line); padding: 10px 14px; border-radius: 999px; }
+      .hero {
+        display: grid; grid-template-columns: 1.25fr .75fr; gap: 0; align-items: stretch; margin-bottom: 28px;
+        background: var(--white); border: 1px solid var(--line); border-radius: 24px; overflow: hidden;
+        box-shadow: 0 18px 40px rgba(39,54,43,.1);
+      }
+      .hero-copy { padding: 36px 32px; display: flex; flex-direction: column; justify-content: center; }
+      .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: 11px; color: var(--coral); font-weight: 700; }
+      h1 { font-size: clamp(2rem, 4vw, 4rem); margin: 12px 0 12px; line-height: .98; }
+      .sub { color: #536057; font-size: 1.05rem; line-height: 1.6; }
+      .stats { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+      .stat { background: #f1eadb; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+      .hero-visual {
+        background-image: linear-gradient(rgba(15,28,18,.18), rgba(15,28,18,.42)), url('/imagenes-Filandia/pueblo.webp');
+        background-size: cover; background-position: center; min-height: 280px;
+      }
+      .provider-grid {
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; margin-top: 24px;
+      }
+      .empty-category { display: flex; align-items: center; gap: 18px; margin-top: 24px; padding: 24px; border: 1px dashed var(--coral); background: rgba(255,255,255,.7); }
+      .empty-category-mark { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 42px; border: 1px solid var(--coral); border-radius: 50%; color: var(--coral); font-size: 25px; }
+      .empty-category h2 { margin: 0 0 6px; font: 600 22px Fraunces, serif; }
+      .empty-category p { margin: 0; color: #59665f; line-height: 1.5; }
+      .provider-card {
+        background: var(--white); border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
+        box-shadow: 0 8px 24px rgba(39,54,43,.06); transition: transform .2s, box-shadow .2s, border-color .2s;
+        display: flex; flex-direction: column;
+      }
+      .provider-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(39,54,43,.12); border-color: var(--coral); }
+      .card-image {
+        height: 170px; background-size: cover; background-position: center; width: 100%;
+        transition: transform .35s ease;
+      }
+      .provider-card:hover .card-image { transform: scale(1.04); }
+      .card-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+      .card-header-row, .meta-row, .card-actions { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+      .card-header-row { margin-bottom: 10px; }
+      .pill { background: #f3ead6; border-radius: 999px; padding: 6px 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+      .rating { font-size: 12px; font-weight: 700; }
+      h3 { margin: 8px 0 10px; font-size: 1.35rem; }
+      .card-body p { margin: 0 0 14px; color: #59665f; line-height: 1.5; font-size: 0.96rem; flex: 1; }
+      .meta-row { color: #4d5a51; font-size: 12px; margin-bottom: 16px; }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); font-weight: 700; font-size: 12px;
+      }
+      .btn.primary { background: var(--ink); color: var(--white); border-color: var(--ink); }
+      .btn.whatsapp { background: #25d366; border-color: #25d366; color: #fff; }
+      @media (max-width: 760px) {
+        .hero { grid-template-columns: 1fr; }
+        .hero-visual { min-height: 180px; order: -1; }
+        .hero-copy { padding: 24px 20px 28px; }
+        .topbar { flex-direction: column; align-items: flex-start; }
+        .provider-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+    <link rel="stylesheet" href="/page-theme.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.Filandiaalamano.com/"},{"@type":"ListItem","position":2,"name":"Categorías","item":"https://www.Filandiaalamano.com/categorias/"},{"@type":"ListItem","position":3,"name":"Alojamientos"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Alojamientos | Filandia a la Mano","description":"Hoteles, fincas y hospedajes para descansar en Filandia","url":"https://www.Filandiaalamano.com/categorias/alojamientos.html","inLanguage":"es","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"Boki Mall - Hotel El Mirador de Boquía","url":"https://www.Filandiaalamano.com/paginas-pautantes/boki-mall-hotel-el-mirador-de-boquia/"},{"@type":"ListItem","position":2,"name":"Hotel Camino Nacional Filandia","url":"https://www.Filandiaalamano.com/paginas-pautantes/hotel-camino-nacional-Filandia/"},{"@type":"ListItem","position":3,"name":"Finca Hotel El Ocaso","url":"https://www.Filandiaalamano.com/paginas-pautantes/finca-hotel-el-ocaso/"},{"@type":"ListItem","position":4,"name":"Hotel La Floresta Filandia","url":"https://www.Filandiaalamano.com/paginas-pautantes/hotel-la-floresta-Filandia/"},{"@type":"ListItem","position":5,"name":"Mahalo Hostel Filandia","url":"https://www.Filandiaalamano.com/paginas-pautantes/mahalo-hostel-Filandia/"},{"@type":"ListItem","position":6,"name":"Hotel La Tía Emiss","url":"https://www.Filandiaalamano.com/paginas-pautantes/hotel-la-tia-emiss/"}]}}</script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="/"><img src="/logo_Filandia2026.webp" alt="Filandia a la Mano" class="brand-logo" style="width:64px;height:64px;object-fit:contain;border-radius:50%"/><span>Filandia a la Mano</span></a>
+        <nav class="top-actions"><a class="nav-link" href="/">Inicio</a><a class="nav-link" href="/">Volver al inicio</a></nav>
+      </div>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">Categoría</div>
+          <h1>Alojamientos</h1>
+          <div class="sub">Hoteles, fincas y hospedajes para descansar en Filandia</div>
+          <div class="stats">
+            <div class="stat"><strong>6</strong> pautantes</div>
+            <div class="stat"><strong>Directo</strong> con locales</div>
+            <div class="stat"><strong>WhatsApp</strong> en cada ficha</div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Alojamientos"></div>
+      </section>
+
+      <div class="provider-grid">
+        
+      <article class="provider-card" onclick="window.location.href='/paginas-pautantes/boki-mall-hotel-el-mirador-de-boquia/'" role="link" tabindex="0" onkeydown="if(event.key==='Enter'){window.location.href='/paginas-pautantes/boki-mall-hotel-el-mirador-de-boquia/'}" style="cursor:pointer" aria-label="Abrir página de Boki Mall - Hotel El Mirador de Boquía">
+        <div class="card-image" style="background-image:url('/pautas/boki_mall/imagenes/Hotel_Mirador_de_Boquia_1747081077351.webp')"></div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="pill">Alojamientos</span>
+            <span class="rating">⭐ 4.9</span>
+          </div>
+          <h3>Boki Mall - Hotel El Mirador de Boquía</h3>
+          <p>Complejo hotelero en Boquía: hospedaje, restaurante, bar y eventos. Premio al mejor hotel rural de Filandia 2024. RNT #91079.</p>
+          <div class="meta-row">
+            <span>$$$</span>
+            <span>Reservas directas</span>
+          </div>
+          <div class="card-actions" onclick="event.stopPropagation()">
+            <a class="btn primary" href="/paginas-pautantes/boki-mall-hotel-el-mirador-de-boquia/">Reservar ya</a>
+            <a class="btn" href="https://www.google.com/maps/search/Km%205%2C%20v%C3%ADa%20principal%20a%20Filandia%2C%20Vereda%20Boqu%C3%ADa" target="_blank" rel="noreferrer">Cómo llegar</a>
+            <a class="btn whatsapp" href="https://wa.me/573112225312" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="provider-card" onclick="window.location.href='/paginas-pautantes/hotel-camino-nacional-Filandia/'" role="link" tabindex="0" onkeydown="if(event.key==='Enter'){window.location.href='/paginas-pautantes/hotel-camino-nacional-Filandia/'}" style="cursor:pointer" aria-label="Abrir página de Hotel Camino Nacional Filandia">
+        <div class="card-image" style="background-image:url('/pautas/hotel_camino_nacional/imagenes/1326164875.webp')"></div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="pill">Alojamientos</span>
+            <span class="rating">⭐ 4.8</span>
+          </div>
+          <h3>Hotel Camino Nacional Filandia</h3>
+          <p>Hotel cénico en el centro de Filandia. Habitaciones cómodas, atención personalizada y desayuno. Ideal para explorar la plaza y la Calle del Café a pie.</p>
+          <div class="meta-row">
+            <span>$$$</span>
+            <span>Reservas directas</span>
+          </div>
+          <div class="card-actions" onclick="event.stopPropagation()">
+            <a class="btn primary" href="/paginas-pautantes/hotel-camino-nacional-Filandia/">Reservar ya</a>
+            <a class="btn" href="https://www.google.com/maps/search/Por%20confirmar" target="_blank" rel="noreferrer">Cómo llegar</a>
+            <a class="btn whatsapp" href="https://wa.me/573113903550" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="provider-card" onclick="window.location.href='/paginas-pautantes/finca-hotel-el-ocaso/'" role="link" tabindex="0" onkeydown="if(event.key==='Enter'){window.location.href='/paginas-pautantes/finca-hotel-el-ocaso/'}" style="cursor:pointer" aria-label="Abrir página de Finca Hotel El Ocaso">
+        <div class="card-image" style="background-image:url('/pautas/coffee-tour-alojamiento-finca-hotel-el-ocaso/imagenes/foto_casa_ocaso.webp')"></div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="pill">Alojamientos</span>
+            <span class="rating">⭐ 4.7</span>
+          </div>
+          <h3>Finca Hotel El Ocaso</h3>
+          <p>Finca hotel rodeada de cafetales con piscina, jardines y vistas al valle. Descanso campo adentro a minutos del pueblo.</p>
+          <div class="meta-row">
+            <span>$$$</span>
+            <span>Reservas directas</span>
+          </div>
+          <div class="card-actions" onclick="event.stopPropagation()">
+            <a class="btn primary" href="/paginas-pautantes/finca-hotel-el-ocaso/">Reservar ya</a>
+            <a class="btn" href="https://www.google.com/maps/search/V%C3%ADa%20rural%2C%20Filandia" target="_blank" rel="noreferrer">Cómo llegar</a>
+            <a class="btn whatsapp" href="https://wa.me/573134253669" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="provider-card" onclick="window.location.href='/paginas-pautantes/hotel-la-floresta-Filandia/'" role="link" tabindex="0" onkeydown="if(event.key==='Enter'){window.location.href='/paginas-pautantes/hotel-la-floresta-Filandia/'}" style="cursor:pointer" aria-label="Abrir página de Hotel La Floresta Filandia">
+        <div class="card-image" style="background-image:url('/pautas/hotel_la_floresta_Filandia/imagenes/lafloresta-fachada.webp')"></div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="pill">Alojamientos</span>
+            <span class="rating">⭐ 4.6</span>
+          </div>
+          <h3>Hotel La Floresta Filandia</h3>
+          <p>Hotel a 400 m de la plaza con terrazas panorámicas, jardín y habitaciones acogedoras. Ideal para parejas y familias.</p>
+          <div class="meta-row">
+            <span>$$</span>
+            <span>Reservas directas</span>
+          </div>
+          <div class="card-actions" onclick="event.stopPropagation()">
+            <a class="btn primary" href="/paginas-pautantes/hotel-la-floresta-Filandia/">Reservar ya</a>
+            <a class="btn" href="https://www.google.com/maps/search/Filandia%2C%20Quind%C3%ADo" target="_blank" rel="noreferrer">Cómo llegar</a>
+            <a class="btn whatsapp" href="https://wa.me/573207211382" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="provider-card" onclick="window.location.href='/paginas-pautantes/mahalo-hostel-Filandia/'" role="link" tabindex="0" onkeydown="if(event.key==='Enter'){window.location.href='/paginas-pautantes/mahalo-hostel-Filandia/'}" style="cursor:pointer" aria-label="Abrir página de Mahalo Hostel Filandia">
+        <div class="card-image" style="background-image:url('/pautas/mahalo_hostel/imagenes/151829511_115398783872298_53747583158063699_n.webp')"></div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="pill">Alojamientos</span>
+            <span class="rating">⭐ 4.8</span>
+          </div>
+          <h3>Mahalo Hostel Filandia</h3>
+          <p>Hostel con habitaciones tipo tatami, desayuno, fogata y vistas a la montaña. Hospitalidad quindiana desde 2020.</p>
+          <div class="meta-row">
+            <span>$$$</span>
+            <span>Check-in 3:00 PM / Check-out 12:00 PM</span>
+          </div>
+          <div class="card-actions" onclick="event.stopPropagation()">
+            <a class="btn primary" href="/paginas-pautantes/mahalo-hostel-Filandia/">Reservar ya</a>
+            <a class="btn" href="https://www.google.com/maps/search/Calle%202%20%23%206-08%2C%20Filandia%2C%20Quind%C3%ADo" target="_blank" rel="noreferrer">Cómo llegar</a>
+            <a class="btn whatsapp" href="https://wa.me/573228551504" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+    
+      <article class="provider-card" onclick="window.location.href='/paginas-pautantes/hotel-la-tia-emiss/'" role="link" tabindex="0" onkeydown="if(event.key==='Enter'){window.location.href='/paginas-pautantes/hotel-la-tia-emiss/'}" style="cursor:pointer" aria-label="Abrir página de Hotel La Tía Emiss">
+        <div class="card-image" style="background-image:url('/pautas/hotel_tia_emiss/imagenes/1625430084.webp')"></div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <span class="pill">Alojamientos</span>
+            <span class="rating">⭐ 4.4</span>
+          </div>
+          <h3>Hotel La Tía Emiss</h3>
+          <p>Hotel familiar de arquitectura de colonización antioqueña a 2 cuadras del parque. Habitaciones doble, twin, triple y dúplex con Wi-Fi y desayuno destacado.</p>
+          <div class="meta-row">
+            <span>$$</span>
+            <span>Check-in 3:00 PM · Check-out 11:00 AM</span>
+          </div>
+          <div class="card-actions" onclick="event.stopPropagation()">
+            <a class="btn primary" href="/paginas-pautantes/hotel-la-tia-emiss/">Reservar ya</a>
+            <a class="btn" href="https://www.google.com/maps/search/Carrera%204%20%235-38%2C%20Filandia%2C%20Quind%C3%ADo" target="_blank" rel="noreferrer">Cómo llegar</a>
+            <a class="btn whatsapp" href="https://wa.me/573164162726" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+    
+        
+      </div>
+    </div>
+  </body>
+</html>

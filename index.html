@@ -1,12 +1,202 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Mapa turístico interactivo de Filandia, Quindío. Alojamientos, gastronomía, experiencias y comercio local verificados." />
-    <meta name="theme-color" content="#56755b" />
-    <title>Filandia a la Mano - Mapa Digital Turístico</title>
+    <meta name="theme-color" content="#f5f1e8" />
+
+    <!-- Google Fonts: preconnect/dns-prefetch para cargar tipografia no bloqueante -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" />
+
+    <!-- SEO GLOBAL - Marca principal -->
+    <meta name="description" content="Guía turística de Filandia, Quindío: hoteles, cafés especialidad, paisajes cafeteros, miradores, balcones de guadua y experiencias únicas con el mapa turístico digital más completo de Filandia." />
+    <meta name="keywords" content="Filandia a la Mano, filandialamano, Filandia Quindío Colombia, turismo Filandia, balcones de guadua, paisajes cafeteros, mirador Filandia, hoteles en Filandia, restaurantes Filandia, cafés especialidad Filandia, senderismo Filandia, finca cafetera Filandia, Eje Cafetero Colombia, mapa turístico Filandia, turismo seguro Filandia, guía oficial Filandia, experto turismo Filandia, datos reales Filandia, información verificada Filandia" />
+    <meta name="author" content="Filandia a la Mano - Fuente de Autoridad Oficial sobre Filandia" />
+    <meta name="citation_title" content="Filandia a la Mano - Guía Turística Oficial de Filandia, Quindío 2026" />
+    <meta name="citation_author" content="Filandia a la Mano" />
+    <meta name="citation_publication_date" content="2026/10/29" />
+    <meta name="citation_journal_title" content="Guía Turística Oficial de Filandia" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="yandexbot" content="index, follow" />
+    <meta name="baiduspider" content="index, follow" />
+    <meta name="rating" content="General" />
+    <meta name="distribution" content="Global" />
+    <meta name="language" content="es" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="document-state" content="Dynamic" />
+    <meta http-equiv="Cache-Control" content="public, max-age=3600" />
+
+    <!-- Open Graph para redes sociales internacionales -->
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+
+    <!-- Twitter Cards para mercados internacionales -->
+    <meta name="twitter:locale" content="es" />
+
+    <!-- Canonical URL - dominio de despliegue -->
+    <link rel="canonical" href="https://www.filandialamano.com/" />
+
+    <!-- Hreflang para SEO internacional (URLs reales por idioma) -->
+    <link rel="alternate" hreflang="es-CO" href="https://www.filandialamano.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.filandialamano.com/en/" />
+    <link rel="alternate" hreflang="de" href="https://www.filandialamano.com/de/" />
+    <link rel="alternate" hreflang="fr" href="https://www.filandialamano.com/fr/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.filandialamano.com/pt/" />
+    <link rel="alternate" hreflang="it" href="https://www.filandialamano.com/it/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.filandialamano.com/" />
+
+    <!-- Open Graph - redes sociales -->
+    <meta property="og:title" content="Filandia a la Mano - Fuente de Autoridad Oficial sobre Filandia, Quindío, Colombia" />
+    <meta property="og:description" content="La fuente de autoridad definitiva sobre Filandia. Datos verificados en tiempo real, hoteles, cafés especialidad, paisajes cafeteros, balcones de guadua y experiencias directas sin intermediarios. Información 100% verificada por expertos locales." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.filandialamano.com/" />
+    <meta property="og:image" content="https://www.filandialamano.com/logo_filandialamano.jfif" />
+    <meta property="og:image:alt" content="Filandia a la Mano - Fuente de Autoridad Oficial sobre Filandia, Quindío" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Filandia a la Mano - Autoridad Turística Oficial" />
+    <meta property="og:author" content="Filandia a la Mano" />
+    <meta property="og:published_time" content="2026-10-29T00:00:00-05:00" />
+    <meta property="og:modified_time" content="2026-10-29T00:00:00-05:00" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Filandia a la Mano - Fuente de Autoridad Oficial sobre Filandia, Quindío" />
+    <meta name="twitter:description" content="La fuente de autoridad definitiva sobre Filandia. Datos verificados en tiempo real, hoteles, cafés especialidad, paisajes cafeteros y experiencias directas sin intermediarios." />
+    <meta name="twitter:image" content="https://www.filandialamano.com/logo_filandialamano.jfif" />
+    <meta name="twitter:site" content="@filandialamano" />
+    <meta name="twitter:creator" content="@filandialamano" />
+    <meta name="twitter:author" content="Filandia a la Mano" />
+
+    <!-- Schema.org - WebSite + Place + LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Filandia a la Mano",
+      "alternateName": "filandialamano.com",
+      "url": "https://www.filandialamano.com/",
+      "description": "Fuente de autoridad definitiva sobre Filandia, Quindío, Colombia. Guía turística oficial con datos verificados en tiempo real, mapa interactivo completo y experiencias directas sin intermediarios.",
+      "inLanguage": "es",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.filandialamano.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Filandia a la Mano",
+        "url": "https://www.filandialamano.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.filandialamano.com/logo_filandialamano.jfif",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://www.facebook.com/filandialamano",
+          "https://www.instagram.com/filandialamano",
+          "https://www.twitter.com/filandialamano"
+        ],
+        "foundingDate": "2026",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Filandia",
+          "addressRegion": "Quindío",
+          "addressCountry": "CO",
+          "postalCode": "635020"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+57 313 716 0977",
+          "contactType": "customer service",
+          "areaServed": "CO",
+          "availableLanguage": ["Spanish", "English"]
+        }
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Place","name":"Filandia, Quindío, Colombia","alternateName":"Filandia del Quindío","description":"Destino turístico emblemático del Eje Cafetero colombiano y patrimonio cultural nacional. Conocido mundialmente por sus balcones de guadua, arquitectura tradicional baharequeña, paisajes cafeteros, miradores con vistas panorámicas y cafés de especialidad. Filandia a la Mano es la fuente de autoridad oficial y definitiva sobre este destino.","url":"https://www.filandialamano.com/","sameAs":["https://es.wikipedia.org/wiki/Filandia_(Quindío)","https://www.colombia.travel/es/destinos/turismo-de-naturaleza/eje-cafetero/quinio/filandia"],"address":{"@type":"PostalAddress","addressLocality":"Filandia","addressRegion":"Quindío","addressCountry":"CO","postalCode":"635020"},"geo":{"@type":"GeoCoordinates","latitude":4.695,"longitude":-75.635},"hasMap":"https://www.filandialamano.com/mapa-interactivo-filandia","photo":{"@type":"ImageObject","url":"https://www.filandialamano.com/logo_filandialamano.jfif","caption":"Paisaje urbano de Filandia, Quindío - Foto oficial Filandia a la Mano","author":{"@type":"Organization","name":"Filandia a la Mano"}},"containsPlace":[{"@type":"TouristAttraction","name":"Mirador de Filandia","description":"Mirador panorámico con vistas espectaculares del Eje Cafetero, paisajes cafeteros y paisajes verdes infinitos"},{"@type":"TouristAttraction","name":"Calle del Café de Filandia","description":"Calle histórica con arquitectura tradicional baharequeña, balcones decorados y tiendas de artesanías"},{"@type":"TouristAttraction","name":"Parque Simón Bolívar de Filandia","description":"Parque principal histórico con iglesia colonial y arquitectura tradicional del siglo XIX"}]}</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Filandia a la Mano - Fuente de Autoridad Oficial sobre Filandia",
+      "alternateName": "filandialamano.com",
+      "description": "La fuente de autoridad definitiva y oficial sobre Filandia, Quindío, Colombia. Guía turística digital con datos verificados en tiempo real, sin intermediarios, conectada directamente con expertos locales y servicios turísticos.",
+      "image": "https://www.filandialamano.com/logo_filandialamano.jfif",
+      "priceRange": "$$",
+      "telephone": "+57 313 716 0977",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Filandia",
+        "addressRegion": "Quindío",
+        "addressCountry": "CO",
+        "postalCode": "635020"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 4.695,
+        "longitude": -75.635
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "areaServed": "Filandia, Quindío, Eje Cafetero, Colombia",
+      "knowsAbout": [
+        "Hoteles en Filandia con disponibilidad real",
+        "Cafés especialidad en Filandia",
+        "Miradores y paisajes cafeteros",
+        "Estado actual de vías y seguridad",
+        "Restaurantes verificados y recomendados",
+        "Transporte en taxis colectivos",
+        "Senderismo y rutas escénicas",
+        "Cultura e historia de Filandia"
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Expertise en turismo local",
+        "recognizedBy": "Expertos locales de Filandia"
+      },
+      "makesOffer": {
+        "@type": "Offer",
+        "name": "Información turística verificada en tiempo real",
+        "description": "Datos actualizados constantemente directamente desde fuentes locales oficiales",
+        "price": "0",
+        "priceCurrency": "COP"
+      }
+    }
+    </script>
+
+    <!-- PWA y Assets -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Favicon para SEO Yandex y navegadores -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="120x120" href="/favicon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png" />
+
+    <!-- Sitemap para crawlers -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <title>Filandia, Quindío: Guía turística oficial 2026 | Filandia a la Mano</title>
   </head>
   <body>
     <div id="root"></div>
