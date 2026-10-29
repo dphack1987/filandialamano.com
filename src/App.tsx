@@ -67,7 +67,7 @@ function App() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '12px',
+            gap: '16px',
             cursor: 'pointer'
           }}
           onClick={() => setActiveSection('home')}
@@ -76,20 +76,21 @@ function App() {
             src="/logo_filandialamano.jfif"
             alt="Filandia a la Mano"
             style={{
-              width: '48px',
-              height: '48px',
-              borderRadius: 'var(--radius)',
+              width: '56px',
+              height: '56px',
+              borderRadius: 'var(--radius-lg)',
               objectFit: 'contain',
               background: 'white',
-              padding: '4px',
-              boxShadow: 'var(--shadow-md)'
+              padding: '6px',
+              boxShadow: 'var(--shadow-lg)',
+              border: '2px solid var(--primary-200)'
             }}
           />
           <div>
-            <div style={{ fontWeight: 700, fontSize: '1.125rem', color: 'var(--text)' }}>
+            <div style={{ fontWeight: 800, fontSize: '1.25rem', color: 'var(--text)', letterSpacing: '-0.01em' }}>
               Filandia
             </div>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+            <div style={{ fontSize: '0.8rem', color: 'var(--primary)', fontWeight: 600 }}>
               a la Mano
             </div>
           </div>
@@ -191,21 +192,46 @@ function App() {
                 zIndex: 2
               }}>
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, type: 'spring' }}
-                  style={{ marginBottom: '48px' }}
+                  initial={{ opacity: 0, scale: 0.5, rotate: -5 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                  transition={{ duration: 1.2, type: 'spring', bounce: 0.4 }}
+                  style={{ marginBottom: '32px' }}
                 >
-                  <img
-                    src="/logo_filandialamano.jfif"
-                    alt="Filandia a la Mano Logo"
-                    style={{
-                      width: 'clamp(200px, 30vw, 400px)',
-                      height: 'auto',
-                      maxWidth: '100%',
-                      filter: 'drop-shadow(0 20px 40px rgba(16, 185, 129, 0.3))'
-                    }}
-                  />
+                  <div style={{
+                    position: 'relative',
+                    display: 'inline-block'
+                  }}>
+                    <motion.div
+                      animate={{
+                        rotate: [0, 2, -2, 0]
+                      }}
+                      transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: 'easeInOut'
+                      }}
+                      style={{
+                        position: 'absolute',
+                        inset: -20,
+                        background: 'linear-gradient(135deg, var(--primary), var(--accent))',
+                        borderRadius: '50%',
+                        opacity: 0.2,
+                        filter: 'blur(40px)',
+                        zIndex: -1
+                      }}
+                    />
+                    <img
+                      src="/logo_filandialamano.jfif"
+                      alt="Filandia a la Mano Logo"
+                      style={{
+                        width: 'clamp(250px, 40vw, 500px)',
+                        height: 'auto',
+                        maxWidth: '100%',
+                        filter: 'drop-shadow(0 30px 60px rgba(16, 185, 129, 0.4))',
+                        borderRadius: 'var(--radius-xl)'
+                      }}
+                    />
+                  </div>
                 </motion.div>
 
                 <motion.div
@@ -235,12 +261,12 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                   style={{
-                    fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+                    fontSize: 'clamp(2rem, 5vw, 3.5rem)',
                     fontWeight: 800,
                     background: 'linear-gradient(135deg, var(--text) 0%, var(--primary) 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    marginBottom: '24px',
+                    marginBottom: '16px',
                     letterSpacing: '-0.02em'
                   }}
                 >
