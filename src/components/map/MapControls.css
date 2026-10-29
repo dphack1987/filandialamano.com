@@ -1,34 +1,33 @@
 .map-controls {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 16px;
+  right: 16px;
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .map-control-group {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
   padding: 8px;
   display: flex;
-  gap: 4px;
-}
-
-.map-control-group.vertical {
   flex-direction: column;
+  gap: 4px;
 }
 
 .map-control-label {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .map-layer-buttons {
@@ -38,46 +37,44 @@
 }
 
 .map-layer-button {
-  padding: 8px 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  background: white;
-  color: #1a1a1a;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   text-align: left;
 }
 
 .map-layer-button:hover {
-  background: #f5f5f5;
-  border-color: #d0d0d0;
+  background: var(--surface-alt);
 }
 
 .map-layer-button.active {
-  background: #56755b;
+  background: var(--primary);
   color: white;
-  border-color: #56755b;
+  border-color: var(--primary);
 }
 
 .map-control-button {
-  width: 36px;
-  height: 36px;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  background: white;
-  color: #1a1a1a;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .map-control-button:hover {
-  background: #f5f5f5;
-  border-color: #d0d0d0;
+  background: var(--surface-alt);
   transform: scale(1.05);
 }
 
@@ -87,39 +84,8 @@
 
 .map-zoom-display {
   text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  color: #1a1a1a;
-  padding: 4px 0;
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .map-control-group {
-    background: #2a2a2a;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .map-control-label,
-  .map-zoom-display {
-    color: #ffffff;
-  }
-
-  .map-layer-button,
-  .map-control-button {
-    background: #3a3a3a;
-    color: #ffffff;
-    border-color: #4a4a4a;
-  }
-
-  .map-layer-button:hover,
-  .map-control-button:hover {
-    background: #4a4a4a;
-    border-color: #5a5a5a;
-  }
-
-  .map-layer-button.active {
-    background: #7ab891;
-    border-color: #7ab891;
-  }
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  padding: 2px 0;
 }

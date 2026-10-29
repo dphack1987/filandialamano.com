@@ -1,19 +1,19 @@
 .theme-toggle {
   display: flex;
-  gap: 8px;
-  padding: 6px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  gap: 4px;
+  padding: 4px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
 }
 
 .theme-button {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   background: transparent;
-  color: #666;
+  color: var(--text-secondary);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -22,33 +22,11 @@
 }
 
 .theme-button:hover {
-  background: #f5f5f5;
-  color: #1a1a1a;
+  background: var(--surface);
+  color: var(--text);
 }
 
 .theme-button.active {
-  background: #56755b;
+  background: var(--primary);
   color: white;
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .theme-toggle {
-    background: #2a2a2a;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .theme-button {
-    color: #999;
-  }
-
-  .theme-button:hover {
-    background: #3a3a3a;
-    color: #ffffff;
-  }
-
-  .theme-button.active {
-    background: #7ab891;
-    color: white;
-  }
 }

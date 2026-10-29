@@ -1,0 +1,16 @@
+{
+  "name": "Filandia a la Mano",
+  "short_name": "Filandia",
+  "description": "Mapa turístico interactivo de Filandia, Quindío",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/logo_filandialamano.jfif",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

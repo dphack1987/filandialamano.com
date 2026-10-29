@@ -1,6 +1,7 @@
 import { useStore } from '../../store/useStore'
 import { Sun, Moon, Monitor } from 'lucide-react'
 import { motion } from 'framer-motion'
+import './ThemeToggle.css'
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useStore()

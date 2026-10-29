@@ -1,11 +1,12 @@
 import { useEffect } from 'react'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap, useMapEvents } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Place } from '../../types'
 import { useStore } from '../../store/useStore'
+import { categoryColor } from '../../constants/categories'
+import './AdvancedMap.css'
 
-// Fix for default marker icons
 delete (L.Icon.Default.prototype as any)._getIconUrl
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
@@ -19,93 +20,86 @@ interface AdvancedMapProps {
   userLocation?: { lat: number; lng: number } | null
 }
 
-function MapController({ onPlaceSelect, userLocation }: AdvancedMapProps) {
+function MapController({ userLocation, onPlaceSelect }: AdvancedMapProps) {
   const map = useMap()
-  const { selectedMapLayer, setMapZoom, setMapCenter } = useStore()
+  const { selectedMapLayer, setMapZoom, setMapCenter, mapZoom, selectedPlace } = useStore()
 
-  useEffect(() => {
-    if (selectedMapLayer) {
-      // Remove existing tile layers
-      map.eachLayer((layer) => {
-        if (layer instanceof L.TileLayer) {
-          map.removeLayer(layer)
-        }
-      })
-
-      // Add selected tile layer
-      L.tileLayer(selectedMapLayer.url, {
-        attribution: selectedMapLayer.attribution,
-        maxZoom: selectedMapLayer.maxZoom || 19
-      }).addTo(map)
-    }
-  }, [selectedMapLayer])
+  useMapEvents({
+    zoomend: () => {
+      const z = map.getZoom()
+      if (z !== useStore.getState().mapZoom) setMapZoom(z)
+    },
+    moveend: () => {
+      const c = map.getCenter()
+      const state = useStore.getState().mapCenter
+      if (Math.abs(c.lat - state[0]) > 1e-6 || Math.abs(c.lng - state[1]) > 1e-6) {
+        setMapCenter([c.lat, c.lng])
+      }
+    },
+  })
 
   useEffect(() => {
     if (userLocation) {
       map.setView([userLocation.lat, userLocation.lng], 16)
     }
-  }, [userLocation])
+  }, [userLocation, map])
 
   useEffect(() => {
-    map.on('zoomend', () => {
-      setMapZoom(map.getZoom())
+    if (map.getZoom() !== mapZoom) {
+      map.setZoom(mapZoom)
+    }
+  }, [mapZoom, map])
+
+  useEffect(() => {
+    if (!selectedPlace?.location?.lat) return
+    map.flyTo([selectedPlace.location.lat, selectedPlace.location.lng], Math.max(map.getZoom(), 16), {
+      duration: 0.8,
     })
-    map.on('moveend', () => {
-      const center = map.getCenter()
-      setMapCenter([center.lat, center.lng])
-    })
-  }, [map, setMapZoom, setMapCenter])
+    onPlaceSelect?.(selectedPlace)
+  }, [selectedPlace, map])
+
+  useEffect(() => {
+    // keep selected layer reference fresh for consumers that need it
+    void selectedMapLayer
+  }, [selectedMapLayer])
 
   return null
 }
 
+function createDivIcon(color: string, letter: string, size = 30) {
+  return L.divIcon({
+    className: 'custom-marker',
+    html: `
+      <div style="
+        background-color: ${color};
+        width: ${size}px;
+        height: ${size}px;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: ${Math.round(size * 0.45)}px;
+        font-weight: 700;
+        font-family: system-ui, sans-serif;
+      ">${letter}</div>
+    `,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  })
+}
+
 export default function AdvancedMap({ places, onPlaceSelect, userLocation }: AdvancedMapProps) {
-  const { mapCenter, mapZoom, selectedMapLayer } = useStore()
+  const { mapCenter, mapZoom, selectedMapLayer, activeRoute, routeWaypoints } = useStore()
+  const setSelectedPlace = useStore(s => s.setSelectedPlace)
 
   const activeLayer = selectedMapLayer || {
     name: 'Calles',
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     attribution: '&copy; OpenStreetMap',
     maxZoom: 19
-  }
-
-  const getColorByType = (type: string): string => {
-    const colors: Record<string, string> = {
-      'Alojamientos': '#56755b',
-      'Restaurantes': '#e76c52',
-      'Experiencias': '#f4a261',
-      'Comercio': '#2a9d8f',
-      'Servicios': '#264653',
-      'Camping': '#e9c46a'
-    }
-    return colors[type] || '#56755b'
-  }
-
-  const createCustomIcon = (place: Place) => {
-    const color = getColorByType(place.type)
-    return L.divIcon({
-      className: 'custom-marker',
-      html: `
-        <div style="
-          background-color: ${color};
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          border: 3px solid white;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-          font-size: 14px;
-          font-weight: bold;
-        ">
-          ${place.icon ? place.icon[0] : '📍'}
-        </div>
-      `,
-      iconSize: [30, 30],
-      iconAnchor: [15, 15]
-    })
   }
 
   return (
@@ -123,20 +117,56 @@ export default function AdvancedMap({ places, onPlaceSelect, userLocation }: Adv
         />
 
         <TileLayer
+          key={activeLayer.name}
           url={activeLayer.url}
           attribution={activeLayer.attribution}
           maxZoom={activeLayer.maxZoom || 19}
         />
 
-        {places.map((place) => (
-          place.location?.lat && place.location?.lng && (
+        {activeRoute?.geometry && activeRoute.geometry.length > 1 && (
+          <Polyline
+            positions={activeRoute.geometry}
+            pathOptions={{
+              color: '#10b981',
+              weight: 5,
+              opacity: 0.85,
+              lineJoin: 'round',
+              lineCap: 'round',
+            }}
+          />
+        )}
+
+        {routeWaypoints.map((wp, i) =>
+          wp.location?.lat && wp.location?.lng ? (
+            <Marker
+              key={`wp-${wp.id}`}
+              position={[wp.location.lat, wp.location.lng]}
+              icon={createDivIcon('#0f172a', String(i + 1), 26)}
+              zIndexOffset={500}
+            >
+              <Popup>
+                <div className="map-popup">
+                  <h3>{i + 1}. {wp.name}</h3>
+                  <p className="popup-type">Punto de ruta</p>
+                </div>
+              </Popup>
+            </Marker>
+          ) : null
+        )}
+
+        {places.map((place) => {
+          if (!place.location?.lat || !place.location?.lng) return null
+          const color = categoryColor(place.type)
+          const letter = place.name.charAt(0).toUpperCase()
+          return (
             <Marker
               key={place.id}
               position={[place.location.lat, place.location.lng]}
-              icon={createCustomIcon(place)}
+              icon={createDivIcon(color, letter)}
               eventHandlers={{
                 click: () => {
-                  if (onPlaceSelect) onPlaceSelect(place)
+                  setSelectedPlace(place)
+                  onPlaceSelect?.(place)
                 }
               }}
             >
@@ -144,10 +174,20 @@ export default function AdvancedMap({ places, onPlaceSelect, userLocation }: Adv
                 <div className="map-popup">
                   <h3>{place.name}</h3>
                   <p className="popup-type">{place.type}</p>
-                  <p className="popup-description">{place.description.substring(0, 100)}...</p>
-                  <div className="popup-rating">⭐ {place.rating} estrellas</div>
+                  <p className="popup-description">
+                    {place.description.length > 100
+                      ? `${place.description.substring(0, 100)}...`
+                      : place.description}
+                  </p>
+                  <div className="popup-rating">⭐ {place.rating}</div>
                   <div className="popup-price">{place.priceRange}</div>
-                  {place.contact.whatsapp && (
+                  <button
+                    className="popup-detail-btn"
+                    onClick={() => setSelectedPlace(place)}
+                  >
+                    Ver detalle
+                  </button>
+                  {place.contact?.whatsapp && (
                     <a
                       href={`https://wa.me/${place.contact.whatsapp}`}
                       target="_blank"
@@ -161,7 +201,7 @@ export default function AdvancedMap({ places, onPlaceSelect, userLocation }: Adv
               </Popup>
             </Marker>
           )
-        ))}
+        })}
 
         {userLocation && (
           <Marker
@@ -176,23 +216,13 @@ export default function AdvancedMap({ places, onPlaceSelect, userLocation }: Adv
                   border-radius: 50%;
                   border: 3px solid white;
                   box-shadow: 0 0 0 10px rgba(59, 130, 246, 0.3);
-                  animation: pulse 2s infinite;
                 "></div>
-                <style>
-                  @keyframes pulse {
-                    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
-                    70% { box-shadow: 0 0 0 20px rgba(59, 130, 246, 0); }
-                    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-                  }
-                </style>
               `,
               iconSize: [20, 20],
-              iconAnchor: [10, 10]
+              iconAnchor: [10, 10],
             })}
           >
-            <Popup>
-              <strong>📍 Tu ubicación</strong>
-            </Popup>
+            <Popup><strong>📍 Tu ubicación</strong></Popup>
           </Marker>
         )}
       </MapContainer>

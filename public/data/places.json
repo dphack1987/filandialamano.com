@@ -1,9 +1,17 @@
 {
+  "projectContact": {
+    "name": "Alvaro Alzate Ortiz",
+    "phone": "+57 317 442 6044",
+    "whatsapp": "573174426044",
+    "whatsappDirect": "https://wa.me/573174426044?text=Hola,%20quisiera%20información%20para%20participar%20en%20filandialamano.com",
+    "email": "info@filandialamano.com",
+    "role": "Contacto para publicidad y participación en el proyecto"
+  },
   "places": [
     {
       "id": 1,
       "name": "Mirador de Filandia",
-      "type": "Turístico",
+      "type": "Sitios Turísticos",
       "description": "Mirador con vista panorámica del valle del Quindío y la cordillera central. Ideal para fotografiar al atardecer.",
       "priceRange": "Gratis",
       "rating": "4.8",
@@ -43,7 +51,7 @@
     {
       "id": 2,
       "name": "Iglesia de la Inmaculada Concepción",
-      "type": "Turístico",
+      "type": "Sitios Turísticos",
       "description": "Iglesia histórica construida en el siglo XIX, con arquitectura colonial y hermosos vitrales.",
       "priceRange": "Gratis",
       "rating": "4.7",
@@ -80,7 +88,7 @@
     {
       "id": 3,
       "name": "Plaza de Bolívar",
-      "type": "Turístico",
+      "type": "Sitios Turísticos",
       "description": "Plaza principal de Filandia, rodeada de edificios históricos, restaurantes y cafeterías tradicionales.",
       "priceRange": "Gratis",
       "rating": "4.6",
@@ -115,7 +123,7 @@
     {
       "id": 4,
       "name": "Casa de la Cultura",
-      "type": "Cultural",
+      "type": "Sitios Turísticos",
       "description": "Centro cultural que alberga eventos, exposiciones y talleres de arte tradicional del Quindío.",
       "priceRange": "$",
       "rating": "4.5",
@@ -164,7 +172,8 @@
       "contact": {
         "phone": "+57 606 123 4570",
         "whatsapp": "573011234570",
-        "email": "reservas@posadadelquindio.com"
+        "email": "reservas@posadadelquindio.com",
+        "whatsappDirect": "https://wa.me/573011234570?text=Hola,%20quisiera%20reservar%20en%20Hotel%20Posada%20del%20Quindío"
       },
       "location": {
         "lat": 4.696,
@@ -239,9 +248,191 @@
       }
     },
     {
+      "id": 200,
+      "name": "Casa Hotel El Balcon",
+      "type": "Alojamientos",
+      "description": "Hospedaje tradicional con balcones de guadua auténticos y arquitectura colonial. Desayuno casero incluido, chimenea y jardines.",
+      "priceRange": "$$",
+      "rating": "4.7",
+      "timeInfo": "Check-in: 2pm, Check-out: 12pm",
+      "badge": "🏠 Tradicional",
+      "color": "primary",
+      "icon": "Hotel",
+      "contact": {
+        "phone": "+57 317 442 6044",
+        "whatsapp": "573174426044",
+        "email": "info@casahotelelbalcon.com",
+        "whatsappDirect": "https://wa.me/573174426044?text=Hola,%20quisiera%20información%20sobre%20Casa%20Hotel%20El%20Balcon"
+      },
+      "location": {
+        "lat": 4.694,
+        "lng": -75.636,
+        "address": "Calle Real #12-18",
+        "landmark": "Centro histórico"
+      },
+      "operatingHours": {
+        "checkIn": "2:00 PM",
+        "checkOut": "12:00 PM",
+        "notes": "Recepción hasta las 10pm"
+      },
+      "tags": [
+        "hotel",
+        "alojamiento",
+        "balcones",
+        "guadua",
+        "colonial",
+        "desayuno"
+      ],
+      "verified": true,
+      "active": true,
+      "accommodationDetails": {
+        "categoryLabel": "Casa Hotel · Balcones de guadua tradicionales",
+        "roomTypes": [
+          "Habitación con balcón",
+          "Habitación familiar",
+          "Suite con chimenea"
+        ],
+        "services": [
+          "Desayuno casero incluido",
+          "WiFi gratuito",
+          "Parqueadero",
+          "Jardines",
+          "Terraza",
+          "Chimenea"
+        ],
+        "roomFeatures": [
+          "Balcón de guadua",
+          "Arquitectura colonial",
+          "Vista a la calle",
+          "Baño privado",
+          "TV cable"
+        ],
+        "nearby": [
+          "Plaza de Bolívar",
+          "Calle Real",
+          "Iglesia",
+          "Cafeterías"
+        ],
+        "policies": [
+          "Check-in: 2:00 PM",
+          "Check-out: 12:00 PM",
+          "Mascotas permitidas (consulta)",
+          "Cancelación 48h antes"
+        ],
+        "checkIn": "2:00 PM",
+        "checkOut": "12:00 PM",
+        "amenities": [
+          "WiFi",
+          "Desayuno",
+          "Parqueadero",
+          "Chimenea"
+        ],
+        "capacity": "Hasta 20 personas",
+        "bookingNotes": "Reservar por WhatsApp o email"
+      },
+      "photos": [
+        "/imagenes-filandia/casa-hotel-1.webp",
+        "/imagenes-filandia/casa-hotel-2.webp"
+      ],
+      "isPautante": true,
+      "actionTarget": {
+        "viewUrl": "https://www.filandialamano.com/paginas-pautantes/casa-hotel-el-balcon/"
+      }
+    },
+    {
+      "id": 201,
+      "name": "Hostal Los Miradores",
+      "type": "Alojamientos",
+      "description": "Hostal económico con vistas al valle del Quindío. Dormitorios compartidos y privados, cocina compartida y ambiente amigable.",
+      "priceRange": "$",
+      "rating": "4.5",
+      "timeInfo": "Check-in: 2pm, Check-out: 11am",
+      "badge": "💰 Económico",
+      "color": "success",
+      "icon": "Hotel",
+      "contact": {
+        "phone": "+57 317 442 6044",
+        "whatsapp": "573174426044"
+      },
+      "location": {
+        "lat": 4.697,
+        "lng": -75.631,
+        "address": "Calle 8 #7-25",
+        "landmark": "Cerca del mirador"
+      },
+      "operatingHours": {
+        "checkIn": "2:00 PM",
+        "checkOut": "11:00 AM",
+        "notes": "Recepción 24/7"
+      },
+      "tags": [
+        "hostal",
+        "alojamiento",
+        "economico",
+        "dormitorio",
+        "cocina",
+        "vista"
+      ],
+      "verified": true,
+      "active": true,
+      "accommodationDetails": {
+        "categoryLabel": "Hostal · Económico con vistas",
+        "roomTypes": [
+          "Dormitorio compartido (6 camas)",
+          "Dormitorio compartido (4 camas)",
+          "Habitación privada doble",
+          "Habitación privada single"
+        ],
+        "services": [
+          "Cocina compartida",
+          "WiFi gratuito",
+          "Parqueadero",
+          "Sala común",
+          "Terraza con vistas",
+          "Lockers"
+        ],
+        "roomFeatures": [
+          "Vista al valle",
+          "Ventilador",
+          "Baño compartido",
+          "Armario individual",
+          "Luz de lectura"
+        ],
+        "nearby": [
+          "Mirador de Filandia",
+          "Supermercado",
+          "Restaurantes económicos"
+        ],
+        "policies": [
+          "Check-in: 2:00 PM",
+          "Check-out: 11:00 AM",
+          "Horario de silencio 10pm-7am",
+          "Cancelación 24h antes"
+        ],
+        "checkIn": "2:00 PM",
+        "checkOut": "11:00 AM",
+        "amenities": [
+          "WiFi",
+          "Cocina",
+          "Parqueadero",
+          "Terraza"
+        ],
+        "capacity": "Hasta 30 personas",
+        "bookingNotes": "Reservar por WhatsApp"
+      },
+      "photos": [
+        "/imagenes-filandia/hostal-1.webp",
+        "/imagenes-filandia/hostal-2.webp"
+      ],
+      "isPautante": true,
+      "actionTarget": {
+        "viewUrl": "https://www.filandialamano.com/paginas-pautantes/hostal-los-miradores/"
+      }
+    },
+    {
       "id": 6,
       "name": "Finca Cafetera El Divino Niño",
-      "type": "Coffee Tours",
+      "type": "Experiencias",
       "description": "Experiencia auténtica de café con tour educativo, degustación y venta de café de origen. Caminatas por finca y vistas panorámicas.",
       "priceRange": "$$",
       "rating": "4.9",
@@ -308,7 +499,7 @@
     {
       "id": 7,
       "name": "Artesanías de Filandia",
-      "type": "Artesanías",
+      "type": "Comercio",
       "description": "Tienda de artesanías tradicionales del Quindío: hammacas, sombreros vueltiatos, ceramics y textiles hechos a mano.",
       "priceRange": "$",
       "rating": "4.6",
@@ -363,7 +554,7 @@
     {
       "id": 8,
       "name": "Camping Los Arrayanes",
-      "type": "Camping",
+      "type": "Experiencias",
       "description": "Camping ecológico en medio de la naturaleza, con zonas de fogón, sanitarios y acceso a senderos.",
       "priceRange": "$",
       "rating": "4.5",
@@ -377,7 +568,7 @@
       },
       "location": {
         "lat": 4.691,
-        "lng": -75.640,
+        "lng": -75.64,
         "address": "Vereda Arrayanes, Filandia",
         "landmark": "A 4km del centro"
       },
@@ -548,7 +739,7 @@
     {
       "id": 11,
       "name": "Tienda de Café La Filandia",
-      "type": "Tiendas",
+      "type": "Comercio",
       "description": "Tienda especializada en café de origen del Quindío. Grano tostado, molido y accesorios para preparar café.",
       "priceRange": "$",
       "rating": "4.7",
@@ -856,6 +1047,185 @@
       }
     },
     {
+      "id": 300,
+      "name": "Asadero El Pueblo",
+      "type": "Restaurantes",
+      "description": "Comida tradicional paisa con asados, bandeja paisa y platos típicos. Carnes a la brasa y ambiente familiar.",
+      "priceRange": "$$",
+      "rating": "4.6",
+      "timeInfo": "11am - 9pm",
+      "badge": "🥩 Asados",
+      "color": "warning",
+      "icon": "Utensils",
+      "contact": {
+        "phone": "+57 317 442 6044",
+        "whatsapp": "573174426044"
+      },
+      "location": {
+        "lat": 4.695,
+        "lng": -75.635,
+        "address": "Calle 7 #8-10",
+        "landmark": "Cerca de la plaza"
+      },
+      "operatingHours": {
+        "notes": "Abierto todos los días"
+      },
+      "tags": [
+        "restaurante",
+        "asados",
+        "bandeja paisa",
+        "comida tradicional",
+        "carne",
+        "familia"
+      ],
+      "verified": true,
+      "active": true,
+      "foodServiceDetails": {
+        "cuisineType": [
+          "Colombiana",
+          "Paisa",
+          "Asados"
+        ],
+        "specialties": [
+          "Bandeja paisa",
+          "Chuleta de cerdo",
+          "Chorizo antioqueño",
+          "Chicharrón",
+          "Mazamorra"
+        ],
+        "menuHighlights": [
+          "Bandeja paisa $32.000",
+          "Chuleta de cerdo $28.000",
+          "Chorizo antioqueño $15.000",
+          "Chicharrón $12.000",
+          "Mazamorra $8.000",
+          "Jugo de lulo $6.000"
+        ],
+        "menuItems": [
+          {
+            "id": "asado-01",
+            "name": "Bandeja paisa",
+            "price": 32000,
+            "category": "platos",
+            "description": "Frijoles, arroz, carne, chicharrón, huevo, aguacate",
+            "isSpecialty": true
+          },
+          {
+            "id": "asado-02",
+            "name": "Chuleta de cerdo",
+            "price": 28000,
+            "category": "carnes",
+            "description": "Chuleta a la brasa con papa y ensalada",
+            "isSpecialty": true
+          }
+        ],
+        "ambiance": "Familiar con ambiente campestre",
+        "capacity": "Hasta 60 personas",
+        "paymentMethods": [
+          "Efectivo",
+          "Tarjeta"
+        ],
+        "reservationRequired": false
+      },
+      "photos": [
+        "/imagenes-filandia/asadero-1.webp",
+        "/imagenes-filandia/asadero-2.webp"
+      ],
+      "isPautante": true,
+      "actionTarget": {
+        "viewUrl": "https://www.filandialamano.com/paginas-pautantes/asadero-el-pueblo/"
+      }
+    },
+    {
+      "id": 301,
+      "name": "Cafetería Dulces del Quindío",
+      "type": "Restaurantes",
+      "description": "Panadería y pastelería tradicional con postres cafeteros, arepas y desayunos colombianos.",
+      "priceRange": "$",
+      "rating": "4.5",
+      "timeInfo": "6am - 8pm",
+      "badge": "🍰 Postres",
+      "color": "warning",
+      "icon": "Utensils",
+      "contact": {
+        "phone": "+57 317 442 6044",
+        "whatsapp": "573174426044"
+      },
+      "location": {
+        "lat": 4.696,
+        "lng": -75.634,
+        "address": "Calle Real #9-5",
+        "landmark": "Centro"
+      },
+      "operatingHours": {
+        "notes": "Abierto todos los días"
+      },
+      "tags": [
+        "panaderia",
+        "postres",
+        "arepas",
+        "desayuno",
+        "cafe",
+        "dulces"
+      ],
+      "verified": true,
+      "active": true,
+      "foodServiceDetails": {
+        "cuisineType": [
+          "Colombiana",
+          "Panadería",
+          "Postres"
+        ],
+        "specialties": [
+          "Arepa con queso",
+          "Changua",
+          "Arepas rellenas",
+          "Postres cafeteros",
+          "Pan de bono"
+        ],
+        "menuHighlights": [
+          "Arepa con queso $5.000",
+          "Changua $8.000",
+          "Arepa rellena $7.000",
+          "Postre café $6.000",
+          "Pan de bono $3.000",
+          "Tinto $3.000"
+        ],
+        "menuItems": [
+          {
+            "id": "dulces-01",
+            "name": "Arepa con queso",
+            "price": 5000,
+            "category": "arepas",
+            "description": "Arepa asada con queso campesino",
+            "isSpecialty": true
+          },
+          {
+            "id": "dulces-02",
+            "name": "Changua",
+            "price": 8000,
+            "category": "desayuno",
+            "description": "Sopa de leche con pan y huevo",
+            "isSpecialty": true
+          }
+        ],
+        "ambiance": "Acogedor con olor a pan recién horneado",
+        "capacity": "Hasta 30 personas",
+        "paymentMethods": [
+          "Efectivo"
+        ],
+        "reservationRequired": false
+      },
+      "photos": [
+        "/imagenes-filandia/dulces-1.webp",
+        "/imagenes-filandia/dulces-2.webp"
+      ],
+      "isPautante": true,
+      "actionTarget": {
+        "viewUrl": "https://www.filandialamano.com/paginas-pautantes/dulces-del-quinio/"
+      }
+    },
+    {
       "id": 102,
       "name": "Café Tradición de Filandia",
       "type": "Cafeterías",
@@ -926,6 +1296,140 @@
       "isPautante": true,
       "actionTarget": {
         "viewUrl": "https://www.filandialamano.com/paginas-pautantes/cafe-tradicion-filandia.html"
+      }
+    },
+    {
+      "id": 400,
+      "name": "Café Mirador",
+      "type": "Cafeterías",
+      "description": "Cafetería con vistas panorámicas al valle del Quindío. Café de especialidad, postres y brunch de fin de semana.",
+      "priceRange": "$$",
+      "rating": "4.6",
+      "timeInfo": "8am - 6pm",
+      "badge": "🌄 Vista Panorámica",
+      "color": "success",
+      "icon": "Coffee",
+      "contact": {
+        "phone": "+57 317 442 6044",
+        "whatsapp": "573174426044"
+      },
+      "location": {
+        "lat": 4.698,
+        "lng": -75.632,
+        "address": "Calle 5 #4-10",
+        "landmark": "Mirador"
+      },
+      "operatingHours": {
+        "notes": "Abierto todos los días"
+      },
+      "tags": [
+        "cafe",
+        "vista",
+        "especialidad",
+        "postres",
+        "brunch",
+        "panoramico"
+      ],
+      "verified": true,
+      "active": true,
+      "coffeeShopDetails": {
+        "coffeeOrigin": "100% Quindío",
+        "coffeeTypes": [
+          "Café especialidad",
+          "Cold brew",
+          "Pour over",
+          "Latte art",
+          "Matcha latte"
+        ],
+        "specialties": [
+          "Cold brew $8.000",
+          "Pour over $10.000",
+          "Latte art $9.000",
+          "Cheesecake $12.000",
+          "Brunch $35.000"
+        ],
+        "tourAvailable": false,
+        "merchandise": [
+          "Taza vista mirador $15.000",
+          "Vaso térmico $25.000"
+        ],
+        "ambiance": "Relajado con vistas infinitas",
+        "wifi": true,
+        "outdoorSeating": true
+      },
+      "photos": [
+        "/imagenes-filandia/cafe-mirador-1.webp",
+        "/imagenes-filandia/cafe-mirador-2.webp"
+      ],
+      "isPautante": true,
+      "actionTarget": {
+        "viewUrl": "https://www.filandialamano.com/paginas-pautantes/cafe-mirador/"
+      }
+    },
+    {
+      "id": 401,
+      "name": "Tintin Café",
+      "type": "Cafeterías",
+      "description": "Cafetería tradicional especializada en tinto y café de olla. Panadería casera y ambiente de pueblo.",
+      "priceRange": "$",
+      "rating": "4.4",
+      "timeInfo": "6am - 8pm",
+      "badge": "☕ Tinto Casero",
+      "color": "success",
+      "icon": "Coffee",
+      "contact": {
+        "phone": "+57 317 442 6044",
+        "whatsapp": "573174426044"
+      },
+      "location": {
+        "lat": 4.695,
+        "lng": -75.635,
+        "address": "Calle Real #11-3",
+        "landmark": "Centro"
+      },
+      "operatingHours": {
+        "notes": "Abierto todos los días"
+      },
+      "tags": [
+        "cafe",
+        "tinto",
+        "cafe olla",
+        "panaderia",
+        "casero",
+        "pueblo"
+      ],
+      "verified": true,
+      "active": true,
+      "coffeeShopDetails": {
+        "coffeeOrigin": "100% Quindío",
+        "coffeeTypes": [
+          "Tinto",
+          "Café de olla",
+          "Tinto con leche",
+          "Arroz con leche"
+        ],
+        "specialties": [
+          "Tinto $3.000",
+          "Café de olla $4.000",
+          "Tinto con leche $4.500",
+          "Arroz con leche $6.000",
+          "Pan $2.000"
+        ],
+        "tourAvailable": false,
+        "merchandise": [
+          "Café en grano $12.000 (250g)"
+        ],
+        "ambiance": "Tradicional de pueblo",
+        "wifi": false,
+        "outdoorSeating": true
+      },
+      "photos": [
+        "/imagenes-filandia/tintin-cafe-1.webp",
+        "/imagenes-filandia/tintin-cafe-2.webp"
+      ],
+      "isPautante": true,
+      "actionTarget": {
+        "viewUrl": "https://www.filandialamano.com/paginas-pautantes/tintin-cafe/"
       }
     }
   ],

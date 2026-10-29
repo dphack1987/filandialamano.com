@@ -1,0 +1,103 @@
+.place-card {
+  display: flex;
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+.place-card:hover,
+.place-card.active {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.place-card-thumb {
+  width: 72px;
+  flex-shrink: 0;
+  background: var(--surface-alt);
+}
+
+.place-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 88px;
+}
+
+.place-card-body {
+  flex: 1;
+  padding: 10px 12px;
+  min-width: 0;
+}
+
+.place-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.place-card-type {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.place-card-fav {
+  border: none;
+  background: transparent;
+  color: var(--text-tertiary);
+  padding: 2px;
+  display: flex;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.place-card-fav.active,
+.place-card-fav:hover {
+  color: #ef4444;
+}
+
+.place-card-name {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.place-card-sponsored {
+  color: var(--accent);
+  margin-left: 4px;
+}
+
+.place-card-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.place-card-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.place-card-price {
+  color: var(--primary);
+  font-weight: 700;
+}

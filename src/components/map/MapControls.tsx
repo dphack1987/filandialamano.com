@@ -1,26 +1,16 @@
 import { useStore } from '../../store/useStore'
-import { Layers, Plus, Minus, Locate, Maximize2, RotateCw } from 'lucide-react'
+import { Layers, Plus, Minus, Locate, Crosshair } from 'lucide-react'
+import './MapControls.css'
 
 interface MapControlsProps {
   onLocateUser?: () => void
-  onFitBounds?: () => void
-  onResetView?: () => void
 }
 
-export default function MapControls({ onLocateUser, onFitBounds, onResetView }: MapControlsProps) {
+export default function MapControls({ onLocateUser }: MapControlsProps) {
   const { mapLayers, selectedMapLayer, setSelectedMapLayer, mapZoom, setMapZoom } = useStore()
-
-  const handleZoomIn = () => {
-    setMapZoom(Math.min(mapZoom + 1, 19))
-  }
-
-  const handleZoomOut = () => {
-    setMapZoom(Math.max(mapZoom - 1, 1))
-  }
 
   return (
     <div className="map-controls">
-      {/* Layer Selector */}
       <div className="map-control-group">
         <div className="map-control-label">
           <Layers size={16} />
@@ -30,7 +20,7 @@ export default function MapControls({ onLocateUser, onFitBounds, onResetView }: 
           {mapLayers.map((layer) => (
             <button
               key={layer.name}
-              className={`map-layer-button ${selectedMapLayer?.name === layer.name ? 'active' : ''}`}
+              className={`map-layer-button ${selectedMapLayer?.name === layer.name || (!selectedMapLayer && layer.name === 'Calles') ? 'active' : ''}`}
               onClick={() => setSelectedMapLayer(layer)}
               title={layer.name}
             >
@@ -40,11 +30,10 @@ export default function MapControls({ onLocateUser, onFitBounds, onResetView }: 
         </div>
       </div>
 
-      {/* Zoom Controls */}
       <div className="map-control-group vertical">
         <button
           className="map-control-button"
-          onClick={handleZoomIn}
+          onClick={() => setMapZoom(Math.min(mapZoom + 1, 19))}
           title="Acercar"
           aria-label="Acercar"
         >
@@ -53,7 +42,7 @@ export default function MapControls({ onLocateUser, onFitBounds, onResetView }: 
         <div className="map-zoom-display">{mapZoom}</div>
         <button
           className="map-control-button"
-          onClick={handleZoomOut}
+          onClick={() => setMapZoom(Math.max(mapZoom - 1, 1))}
           title="Alejar"
           aria-label="Alejar"
         >
@@ -61,38 +50,38 @@ export default function MapControls({ onLocateUser, onFitBounds, onResetView }: 
         </button>
       </div>
 
-      {/* Location Controls */}
       <div className="map-control-group vertical">
-        {onLocateUser && (
-          <button
-            className="map-control-button"
-            onClick={onLocateUser}
-            title="Mi ubicación"
-            aria-label="Mi ubicación"
-          >
-            <Locate size={18} />
-          </button>
-        )}
-        {onFitBounds && (
-          <button
-            className="map-control-button"
-            onClick={onFitBounds}
-            title="Ajustar vista"
-            aria-label="Ajustar vista"
-          >
-            <Maximize2 size={18} />
-          </button>
-        )}
-        {onResetView && (
-          <button
-            className="map-control-button"
-            onClick={onResetView}
-            title="Resetear vista"
-            aria-label="Resetear vista"
-          >
-            <RotateCw size={18} />
-          </button>
-        )}
+        <button
+          className="map-control-button"
+          onClick={() => {
+            if (onLocateUser) onLocateUser()
+            else if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(
+                pos => useStore.getState().setUserLocation({
+                  lat: pos.coords.latitude,
+                  lng: pos.coords.longitude,
+                }),
+                () => {}
+              )
+            }
+          }}
+          title="Mi ubicación"
+          aria-label="Mi ubicación"
+        >
+          <Locate size={18} />
+        </button>
+        <button
+          className="map-control-button"
+          onClick={() => {
+            useStore.getState().setMapCenter([4.695, -75.635])
+            setMapZoom(15)
+            useStore.getState().setSelectedPlace(null)
+          }}
+          title="Centrar en Filandia"
+          aria-label="Centrar en Filandia"
+        >
+          <Crosshair size={18} />
+        </button>
       </div>
     </div>
   )
