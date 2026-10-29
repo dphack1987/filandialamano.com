@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { Place, MapLayer } from '../../types'
+import { Place } from '../../types'
 import { useStore } from '../../store/useStore'
 
 // Fix for default marker icons
@@ -19,9 +19,9 @@ interface AdvancedMapProps {
   userLocation?: { lat: number; lng: number } | null
 }
 
-function MapController({ places, onPlaceSelect, userLocation }: AdvancedMapProps) {
+function MapController({ onPlaceSelect, userLocation }: AdvancedMapProps) {
   const map = useMap()
-  const { selectedMapLayer, mapZoom, mapCenter, setMapZoom, setMapCenter } = useStore()
+  const { selectedMapLayer, setMapZoom, setMapCenter } = useStore()
 
   useEffect(() => {
     if (selectedMapLayer) {
@@ -38,13 +38,13 @@ function MapController({ places, onPlaceSelect, userLocation }: AdvancedMapProps
         maxZoom: selectedMapLayer.maxZoom || 19
       }).addTo(map)
     }
-  }, [selectedMapLayer, map])
+  }, [selectedMapLayer])
 
   useEffect(() => {
     if (userLocation) {
       map.setView([userLocation.lat, userLocation.lng], 16)
     }
-  }, [userLocation, map])
+  }, [userLocation])
 
   useEffect(() => {
     map.on('zoomend', () => {

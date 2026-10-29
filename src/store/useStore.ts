@@ -1,6 +1,6 @@
 import { create } from 'zustand'
-import { persist, createJSONStorage } from 'zustand/middleware'
-import { Language, Currency, Place, MapLayer, Route, Itinerary, Favorite, Theme } from '../types'
+import { persist } from 'zustand/middleware'
+import { Language, Currency, Place, MapLayer, Itinerary, Favorite, Theme } from '../types'
 
 interface AppState {
   // Language & Currency

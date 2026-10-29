@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Route, Direction, Navigation, MapPin, X, Plus, Trash2 } from 'lucide-react'
+import { Navigation, MapPin, X, Plus, Trash2, ArrowRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Place, Location } from '../../types'
 
@@ -130,12 +130,12 @@ export default function RoutingPanel({ places, onRouteCalculated }: RoutingPanel
         >
           {isCalculating ? (
             <>
-              <Direction size={18} className="animate-spin" />
+              <ArrowRight size={18} className="animate-spin" />
               Calculando...
             </>
           ) : (
             <>
-              <Direction size={18} />
+              <ArrowRight size={18} />
               Calcular Ruta
             </>
           )}

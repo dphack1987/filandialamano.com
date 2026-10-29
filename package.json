@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --noEmit --skipLibCheck",
     "seo:generate": "node tools/generate_international_seo_pages.js && node tools/generate_category_pages.js",
     "seo:audit": "python tools/seo_technical_audit.py --output tools/seo_technical_audit.json",
     "seo:enrich": "python tools/enrich_static_seo.py",

@@ -1,5 +1,5 @@
 import { useStore } from '../../store/useStore'
-import { Heart, X, FolderPlus, Trash2 } from 'lucide-react'
+import { Heart, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Place } from '../../types'
 

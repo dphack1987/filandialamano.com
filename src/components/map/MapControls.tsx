@@ -1,4 +1,3 @@
-import { MapLayer } from '../../types'
 import { useStore } from '../../store/useStore'
 import { Layers, Plus, Minus, Locate, Maximize2, RotateCw } from 'lucide-react'
 

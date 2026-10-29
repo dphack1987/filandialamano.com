@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, Menu, X, Map, Heart, Navigation, Filter, Moon, Sun, Maximize2, Locate, Layers, Star } from 'lucide-react'
+import { Search, Menu, X, Heart, Navigation, Star } from 'lucide-react'
 import { Place } from './types'
 import { useStore } from './store/useStore'
 import dataService from './services/dataService'
@@ -21,8 +21,6 @@ import './components/routing/RoutingPanel.css'
 function App() {
   const [loading, setLoading] = useState(true)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
-  const [showFavorites, setShowFavorites] = useState(false)
-  const [showRouting, setShowRouting] = useState(false)
   const [activePanel, setActivePanel] = useState<'favorites' | 'routing' | null>(null)
 
   const {
@@ -35,9 +33,7 @@ function App() {
     searchQuery,
     setSearchQuery,
     addToSearchHistory,
-    searchHistory,
     theme,
-    setTheme,
     language,
     setLanguage,
     currency,
