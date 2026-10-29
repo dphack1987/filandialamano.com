@@ -44,8 +44,35 @@
       "coord": [4.696, -75.633],
       "tone": "primary",
       "note": "Hotel boutique en el centro"
+    },
+    {
+      "id": 100,
+      "label": "Hotel Boutique Filandia",
+      "type": "Alojamiento",
+      "placeId": 100,
+      "coord": [4.6965, -75.6325],
+      "tone": "primary",
+      "note": "Hotel boutique de lujo (Ejemplo Pautante)"
+    },
+    {
+      "id": 101,
+      "label": "Restaurante Las Truchas de Filandia",
+      "type": "Gastronómico",
+      "placeId": 101,
+      "coord": [4.6945, -75.634],
+      "tone": "warning",
+      "note": "Restaurante de truchas (Ejemplo Pautante)"
+    },
+    {
+      "id": 102,
+      "label": "Café Tradición de Filandia",
+      "type": "Gastronómico",
+      "placeId": 102,
+      "coord": [4.6955, -75.6355],
+      "tone": "success",
+      "note": "Cafetería artesanal (Ejemplo Pautante)"
     }
   ],
   "lastUpdated": "2026-10-29T00:00:00.000Z",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

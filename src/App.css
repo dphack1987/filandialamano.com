@@ -143,6 +143,15 @@
   color: white;
 }
 
+.icon-button.demo {
+  background: #e76c52;
+  color: white;
+}
+
+.icon-button.demo:hover {
+  background: #d65a48;
+}
+
 .mobile-menu-button {
   display: none;
   width: 40px;

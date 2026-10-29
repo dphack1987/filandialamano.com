@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, Menu, X, Map, Heart, Navigation, Filter, Moon, Sun, Maximize2, Locate, Layers } from 'lucide-react'
+import { Search, Menu, X, Map, Heart, Navigation, Filter, Moon, Sun, Maximize2, Locate, Layers, Star } from 'lucide-react'
 import { Place } from './types'
 import { useStore } from './store/useStore'
 import dataService from './services/dataService'
@@ -212,6 +212,14 @@ function App() {
               title="Planificar ruta"
             >
               <Navigation size={20} />
+            </button>
+
+            <button
+              className="icon-button demo"
+              onClick={() => window.open('/paginas-pautantes/hotel-boutique-filandia.html', '_blank')}
+              title="Ver ejemplo de pauta"
+            >
+              <Star size={20} />
             </button>
 
             <button

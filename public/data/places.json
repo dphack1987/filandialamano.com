@@ -237,8 +237,143 @@
       "actionTarget": {
         "viewUrl": "https://www.filandialamano.com/paginas-pautantes/hotel-posada-del-quindio/"
       }
+    },
+    {
+      "id": 100,
+      "name": "Hotel Boutique Filandia",
+      "type": "Alojamientos",
+      "description": "Hotel boutique de lujo con vistas panorámicas al valle del Quindío. Desayuno incluido, spa, wifi de alta velocidad y atención personalizada. Ideal para parejas y viajeros exigentes.",
+      "priceRange": "$$$$",
+      "rating": "4.9",
+      "timeInfo": "Check-in: 3pm, Check-out: 12pm",
+      "badge": "🏆 Premium",
+      "color": "primary",
+      "icon": "Hotel",
+      "contact": {
+        "phone": "+57 606 850 1234",
+        "whatsapp": "573158501234",
+        "email": "reservas@hotelboutiquefilandia.com"
+      },
+      "location": {
+        "lat": 4.6965,
+        "lng": -75.6325,
+        "address": "Calle 7 #6-15, Filandia, Quindío",
+        "landmark": "A 2 cuadras del mirador"
+      },
+      "operatingHours": {
+        "checkIn": "3:00 PM",
+        "checkOut": "12:00 PM",
+        "notes": "Recepción 24/7"
+      },
+      "tags": [
+        "hotel",
+        "boutique",
+        "lujo",
+        "spa",
+        "vista",
+        "desayuno",
+        "wifi"
+      ],
+      "verified": true,
+      "active": true,
+      "photos": [
+        "/pautantes/hotel-boutique-filandia/imagenes/fachada-hotel.webp",
+        "/pautantes/hotel-boutique-filandia/imagenes/habitacion-deluxe.webp"
+      ],
+      "isPautante": true,
+      "actionTarget": {
+        "viewUrl": "https://www.filandialamano.com/paginas-pautantes/hotel-boutique-filandia.html"
+      }
+    },
+    {
+      "id": 101,
+      "name": "Restaurante Las Truchas de Filandia",
+      "type": "Restaurantes",
+      "description": "El mejor restaurante de truchas en Filandia. Truchas frescas del río, preparadas a la plancha, al ajillo o cocinadas en hoja de plátano. Ambiente tradicional con vista al paisaje cafetero.",
+      "priceRange": "$$",
+      "rating": "4.7",
+      "timeInfo": "12pm - 10pm",
+      "badge": "⭐ Popular",
+      "color": "warning",
+      "icon": "Utensils",
+      "contact": {
+        "phone": "+57 606 850 2345",
+        "whatsapp": "573158502345",
+        "email": "info@truchasfilandia.com"
+      },
+      "location": {
+        "lat": 4.6945,
+        "lng": -75.634,
+        "address": "Calle 6 #5-30, Filandia, Quindío",
+        "landmark": "A 1 cuadra de la plaza"
+      },
+      "operatingHours": {
+        "notes": "Abierto todos los días"
+      },
+      "tags": [
+        "restaurante",
+        "truchas",
+        "gastronomia",
+        "comida tradicional",
+        "patacon",
+        "arepa"
+      ],
+      "verified": true,
+      "active": true,
+      "photos": [
+        "/pautantes/restaurante-truchas-filandia/imagenes/trucha-plancha.webp",
+        "/pautantes/restaurante-truchas-filandia/imagenes/terraza-vista.webp"
+      ],
+      "isPautante": true,
+      "actionTarget": {
+        "viewUrl": "https://www.filandialamano.com/paginas-pautantes/restaurante-truchas-filandia.html"
+      }
+    },
+    {
+      "id": 102,
+      "name": "Café Tradición de Filandia",
+      "type": "Cafeterías",
+      "description": "Cafetería artesanal con café 100% de origen del Quindío. Tours de café, degustaciones, y venta de café tostado en casa. Experiencia auténtica del eje cafetero.",
+      "priceRange": "$",
+      "rating": "4.8",
+      "timeInfo": "7am - 7pm",
+      "badge": "☕ Café de Origen",
+      "color": "success",
+      "icon": "Coffee",
+      "contact": {
+        "phone": "+57 606 850 3456",
+        "whatsapp": "573158503456",
+        "email": "hola@cafetradicion.com"
+      },
+      "location": {
+        "lat": 4.6955,
+        "lng": -75.6355,
+        "address": "Carrera 6 #6-20, Filandia, Quindío",
+        "landmark": "Frente a la iglesia"
+      },
+      "operatingHours": {
+        "notes": "Abierto todos los días"
+      },
+      "tags": [
+        "cafe",
+        "cafeteria",
+        "tour cafe",
+        "cafe origen",
+        "degustacion",
+        "comprar cafe"
+      ],
+      "verified": true,
+      "active": true,
+      "photos": [
+        "/pautantes/cafe-tradicion-filandia/imagenes/cafeteria-interior.webp",
+        "/pautantes/cafe-tradicion-filandia/imagenes/cafe-tinto.webp"
+      ],
+      "isPautante": true,
+      "actionTarget": {
+        "viewUrl": "https://www.filandialamano.com/paginas-pautantes/cafe-tradicion-filandia.html"
+      }
     }
   ],
   "lastUpdated": "2026-10-29T00:00:00.000Z",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
