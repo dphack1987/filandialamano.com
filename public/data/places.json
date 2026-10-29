@@ -1,0 +1,244 @@
+{
+  "places": [
+    {
+      "id": 1,
+      "name": "Mirador de Filandia",
+      "type": "Turístico",
+      "description": "Mirador con vista panorámica del valle del Quindío y la cordillera central. Ideal para fotografiar al atardecer.",
+      "priceRange": "Gratis",
+      "rating": "4.8",
+      "timeInfo": "Abierto todo el día",
+      "badge": "Vista Panorámica",
+      "color": "success",
+      "icon": "Mountain",
+      "contact": {
+        "phone": "+57 606 123 4567",
+        "whatsapp": "573011234567"
+      },
+      "location": {
+        "lat": 4.698,
+        "lng": -75.632,
+        "address": "Calle 5, Filandia",
+        "landmark": "Entrada principal del mirador"
+      },
+      "operatingHours": {
+        "notes": "Acceso libre 24/7"
+      },
+      "tags": [
+        "mirador",
+        "vista",
+        "fotografía",
+        "naturaleza",
+        "turismo",
+        "gratuito"
+      ],
+      "verified": true,
+      "active": true,
+      "photos": [
+        "/imagenes-filandia/mirador-1.webp",
+        "/imagenes-filandia/mirador-2.webp"
+      ],
+      "isPautante": false
+    },
+    {
+      "id": 2,
+      "name": "Iglesia de la Inmaculada Concepción",
+      "type": "Turístico",
+      "description": "Iglesia histórica construida en el siglo XIX, con arquitectura colonial y hermosos vitrales.",
+      "priceRange": "Gratis",
+      "rating": "4.7",
+      "timeInfo": "Misas: 7am, 12pm, 6pm",
+      "badge": "Patrimonio",
+      "color": "primary",
+      "icon": "Home",
+      "contact": {
+        "phone": "+57 606 123 4568"
+      },
+      "location": {
+        "lat": 4.695,
+        "lng": -75.635,
+        "address": "Plaza de Bolívar, Filandia",
+        "landmark": "Frente a la plaza principal"
+      },
+      "operatingHours": {
+        "notes": "Abierta para visitas y misas"
+      },
+      "tags": [
+        "iglesia",
+        "patrimonio",
+        "historia",
+        "arquitectura",
+        "religión"
+      ],
+      "verified": true,
+      "active": true,
+      "photos": [
+        "/imagenes-filandia/iglesia-1.webp"
+      ],
+      "isPautante": false
+    },
+    {
+      "id": 3,
+      "name": "Plaza de Bolívar",
+      "type": "Turístico",
+      "description": "Plaza principal de Filandia, rodeada de edificios históricos, restaurantes y cafeterías tradicionales.",
+      "priceRange": "Gratis",
+      "rating": "4.6",
+      "timeInfo": "Abierto todo el día",
+      "badge": "Centro",
+      "color": "success",
+      "icon": "MapPin",
+      "contact": {},
+      "location": {
+        "lat": 4.6955,
+        "lng": -75.6345,
+        "address": "Calle 5 con Carrera 6",
+        "landmark": "Centro del pueblo"
+      },
+      "operatingHours": {
+        "notes": "Espacio público libre"
+      },
+      "tags": [
+        "plaza",
+        "centro",
+        "turismo",
+        "cultura",
+        "descanso"
+      ],
+      "verified": true,
+      "active": true,
+      "photos": [
+        "/imagenes-filandia/plaza-1.webp"
+      ],
+      "isPautante": false
+    },
+    {
+      "id": 4,
+      "name": "Casa de la Cultura",
+      "type": "Cultural",
+      "description": "Centro cultural que alberga eventos, exposiciones y talleres de arte tradicional del Quindío.",
+      "priceRange": "$",
+      "rating": "4.5",
+      "timeInfo": "9am - 6pm",
+      "badge": "Cultura",
+      "color": "info",
+      "icon": "Building2",
+      "contact": {
+        "phone": "+57 606 123 4569",
+        "whatsapp": "573011234569"
+      },
+      "location": {
+        "lat": 4.694,
+        "lng": -75.636,
+        "address": "Calle 6 #5-20",
+        "landmark": "A 2 cuadras de la plaza"
+      },
+      "operatingHours": {
+        "notes": "Horario de oficina"
+      },
+      "tags": [
+        "cultura",
+        "arte",
+        "eventos",
+        "talleres",
+        "exposiciones"
+      ],
+      "verified": true,
+      "active": true,
+      "photos": [
+        "/imagenes-filandia/cultura-1.webp"
+      ],
+      "isPautante": false
+    },
+    {
+      "id": 5,
+      "name": "Hotel Posada del Quindío",
+      "type": "Alojamientos",
+      "description": "Hotel boutique con vistas panorámicas, desayuno incluido y wifi gratuito. RNT #12345.",
+      "priceRange": "$$$",
+      "rating": "4.9",
+      "timeInfo": "Check-in: 3pm, Check-out: 12pm",
+      "badge": "Habitación",
+      "color": "primary",
+      "icon": "Hotel",
+      "contact": {
+        "phone": "+57 606 123 4570",
+        "whatsapp": "573011234570",
+        "email": "reservas@posadadelquindio.com"
+      },
+      "location": {
+        "lat": 4.696,
+        "lng": -75.633,
+        "address": "Calle 7 #6-15",
+        "landmark": "Cerca del mirador"
+      },
+      "operatingHours": {
+        "checkIn": "3:00 PM",
+        "checkOut": "12:00 PM",
+        "notes": "Reservar con anticipación"
+      },
+      "tags": [
+        "hotel",
+        "alojamiento",
+        "wifi",
+        "desayuno",
+        "vista"
+      ],
+      "verified": true,
+      "active": true,
+      "accommodationDetails": {
+        "categoryLabel": "Hotel Boutique · Vistas panorámicas",
+        "roomTypes": [
+          "Habitación Simple",
+          "Habitación Doble",
+          "Suite con Vista"
+        ],
+        "services": [
+          "Desayuno incluido",
+          "WiFi gratuito",
+          "Parqueadero",
+          "Room service",
+          "Lavandería"
+        ],
+        "roomFeatures": [
+          "Vista panorámica",
+          "Aire acondicionado",
+          "TV cable",
+          "Baño privado",
+          "Cafetera"
+        ],
+        "nearby": [
+          "Mirador de Filandia",
+          "Plaza de Bolívar",
+          "Restaurantes"
+        ],
+        "policies": [
+          "Check-in: 3:00 PM",
+          "Check-out: 12:00 PM",
+          "No se aceptan mascotas",
+          "Cancelación 24h antes"
+        ],
+        "checkIn": "3:00 PM",
+        "checkOut": "12:00 PM",
+        "amenities": [
+          "WiFi",
+          "Desayuno",
+          "Parqueadero",
+          "Aire acondicionado"
+        ],
+        "capacity": "Hasta 30 personas",
+        "bookingNotes": "Reservar por WhatsApp o email"
+      },
+      "photos": [
+        "/imagenes-filandia/hotel-1.webp",
+        "/imagenes-filandia/hotel-2.webp"
+      ],
+      "isPautante": true,
+      "actionTarget": {
+        "viewUrl": "https://www.filandialamano.com/paginas-pautantes/hotel-posada-del-quindio/"
+      }
+    }
+  ],
+  "lastUpdated": "2026-10-29T00:00:00.000Z",
+  "version": "1.0.0"
+}

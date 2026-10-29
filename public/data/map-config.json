@@ -1,0 +1,45 @@
+{
+  "sites": {
+    "filandia-centro": {
+      "name": "Filandia Centro",
+      "center": [4.695, -75.635],
+      "zoom": 16,
+      "tileRange": 5,
+      "gpxFile": null,
+      "bounds": {
+        "latMin": 4.690,
+        "latMax": 4.700,
+        "lonMin": -75.640,
+        "lonMax": -75.630
+      },
+      "images": [
+        "/imagenes-filandia/filandia-centro-1.webp",
+        "/imagenes-filandia/filandia-centro-2.webp",
+        "/imagenes-filandia/filandia-centro-3.webp"
+      ]
+    },
+    "mirador-filandia": {
+      "name": "Mirador de Filandia",
+      "center": [4.698, -75.632],
+      "zoom": 16,
+      "tileRange": 6,
+      "gpxFile": null,
+      "bounds": {
+        "latMin": 4.693,
+        "latMax": 4.703,
+        "lonMin": -75.637,
+        "lonMax": -75.627
+      },
+      "images": [
+        "/imagenes-filandia/mirador-1.webp",
+        "/imagenes-filandia/mirador-2.webp"
+      ]
+    }
+  },
+  "defaultSite": "filandia-centro",
+  "tileServer": {
+    "url": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.webp",
+    "subdomains": ["a", "b", "c"],
+    "zoomRange": [12, 16]
+  }
+}

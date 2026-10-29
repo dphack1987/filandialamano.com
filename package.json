@@ -1,0 +1,47 @@
+{
+  "name": "filandia-mapa-turistico",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/inject-prerender.js",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "seo:generate": "node tools/generate_international_seo_pages.js && node tools/generate_category_pages.js",
+    "seo:audit": "python tools/seo_technical_audit.py --output tools/seo_technical_audit.json",
+    "seo:enrich": "python tools/enrich_static_seo.py",
+    "seo:routes": "python tools/generate_sitemap_route_pages.py",
+    "seo:meta": "python tools/optimize_static_meta.py",
+    "seo:strategy": "python tools/seo_strategy_analyzer.py --output tools/seo_strategy_report.json",
+    "seo:structured": "python tools/enrich_structured_data.py"
+  },
+  "dependencies": {
+    "@types/qrcode": "^1.5.6",
+    "@vitejs/plugin-react": "^4.3.0",
+    "@vitejs/plugin-react-oxc": "^0.4.3",
+    "framer-motion": "^11.0.0",
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3",
+    "leaflet-routing-machine": "^3.2.12",
+    "leaflet-geoman-free": "^2.14.2",
+    "lucide-react": "^0.344.0",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^3.0.0",
+    "react-leaflet": "^4.2.1",
+    "zustand": "^4.5.0",
+    "@tanstack/react-query": "^5.17.0",
+    "react-virtuoso": "^4.6.0",
+    "date-fns": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.8",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "sharp": "^0.35.4",
+    "terser": "^5.51.2",
+    "typescript": "^5.5.3"
+  }
+}
