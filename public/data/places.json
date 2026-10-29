@@ -239,6 +239,422 @@
       }
     },
     {
+      "id": 6,
+      "name": "Finca Cafetera El Divino Niño",
+      "type": "Coffee Tours",
+      "description": "Experiencia auténtica de café con tour educativo, degustación y venta de café de origen. Caminatas por finca y vistas panorámicas.",
+      "priceRange": "$$",
+      "rating": "4.9",
+      "timeInfo": "Tours: 9am - 4pm",
+      "badge": "☕ Café 100% Origen",
+      "color": "success",
+      "icon": "Coffee",
+      "contact": {
+        "phone": "+57 317 442 6044",
+        "whatsapp": "573174426044"
+      },
+      "location": {
+        "lat": 4.692,
+        "lng": -75.638,
+        "address": "Vereda El Divino, Filandia",
+        "landmark": "A 3km del centro"
+      },
+      "operatingHours": {
+        "notes": "Tours cada hora"
+      },
+      "tags": [
+        "cafe",
+        "tour",
+        "finca",
+        "degustacion",
+        "origen",
+        "experiencia"
+      ],
+      "verified": true,
+      "active": true,
+      "experienceDetails": {
+        "duration": "1.5 horas",
+        "difficulty": "Fácil",
+        "groupSize": "2-15 personas",
+        "included": [
+          "Tour educativo de café",
+          "Degustación de café",
+          "Caminata por finca",
+          "Vistas panorámicas"
+        ],
+        "notIncluded": [
+          "Transporte",
+          "Comida",
+          "Bebidas adicionales"
+        ],
+        "requirements": [
+          "Calzado cómodo",
+          "Ropa ligera",
+          "Protector solar"
+        ],
+        "languages": [
+          "Español",
+          "Inglés"
+        ],
+        "meetingPoint": "Finca El Divino Niño",
+        "cancellationPolicy": "Cancelación gratuita hasta 24h antes",
+        "tariff": "$35.000 COP por persona"
+      },
+      "photos": [
+        "/imagenes-filandia/finca-cafe-1.webp"
+      ],
+      "isPautante": true
+    },
+    {
+      "id": 7,
+      "name": "Artesanías de Filandia",
+      "type": "Artesanías",
+      "description": "Tienda de artesanías tradicionales del Quindío: hammacas, sombreros vueltiatos, ceramics y textiles hechos a mano.",
+      "priceRange": "$",
+      "rating": "4.6",
+      "timeInfo": "9am - 7pm",
+      "badge": "🎨 Hecho a Mano",
+      "color": "warning",
+      "icon": "ShoppingBag",
+      "contact": {
+        "phone": "+57 606 850 1111"
+      },
+      "location": {
+        "lat": 4.696,
+        "lng": -75.634,
+        "address": "Calle Real #10-20",
+        "landmark": "Centro histórico"
+      },
+      "operatingHours": {
+        "notes": "Abierto todos los días"
+      },
+      "tags": [
+        "artesanias",
+        "hammocks",
+        "sombreros",
+        "ceramics",
+        "textiles",
+        "tradicional"
+      ],
+      "verified": true,
+      "active": true,
+      "shopDetails": {
+        "products": [
+          "Hammacas",
+          "Sombreros vueltiaos",
+          "Cerámica",
+          "Textiles",
+          "Joyería artesanal"
+        ],
+        "priceRange": "$5.000 - $150.000",
+        "handmade": true,
+        "localArtisans": true,
+        "shippingAvailable": false,
+        "paymentMethods": [
+          "Efectivo",
+          "Tarjeta"
+        ]
+      },
+      "photos": [
+        "/imagenes-filandia/artesanias-1.webp"
+      ],
+      "isPautante": true
+    },
+    {
+      "id": 8,
+      "name": "Camping Los Arrayanes",
+      "type": "Camping",
+      "description": "Camping ecológico en medio de la naturaleza, con zonas de fogón, sanitarios y acceso a senderos.",
+      "priceRange": "$",
+      "rating": "4.5",
+      "timeInfo": "Check-in: 2pm, Check-out: 12pm",
+      "badge": "🏕️ Naturaleza",
+      "color": "info",
+      "icon": "Campfire",
+      "contact": {
+        "phone": "+57 317 555 8888",
+        "whatsapp": "573175558888"
+      },
+      "location": {
+        "lat": 4.691,
+        "lng": -75.640,
+        "address": "Vereda Arrayanes, Filandia",
+        "landmark": "A 4km del centro"
+      },
+      "operatingHours": {
+        "notes": "Reservar por WhatsApp"
+      },
+      "tags": [
+        "camping",
+        "naturaleza",
+        "ecologico",
+        "senderos",
+        "fogón",
+        "sanitarios"
+      ],
+      "verified": true,
+      "active": true,
+      "accommodationDetails": {
+        "categoryLabel": "Camping ecológico · Senderos y naturaleza",
+        "roomTypes": [
+          "Carpas propias",
+          "Glamping básico",
+          "Zonas de acampada"
+        ],
+        "services": [
+          "Baños comunitarios",
+          "Zonas de fogón",
+          "Mesas y bancos",
+          "Estacionamiento",
+          "Seguridad nocturna"
+        ],
+        "roomFeatures": [
+          "Vistas a naturaleza",
+          "Sonido natural",
+          "Acceso a senderos",
+          "Luz solar natural"
+        ],
+        "nearby": [
+          "Senderos",
+          "Río",
+          "Miradores"
+        ],
+        "policies": [
+          "No música alta",
+          "Respetar horarios de silencio",
+          "Fogones solo en zonas designadas",
+          "Llevar basura de vuelta"
+        ],
+        "checkIn": "2:00 PM",
+        "checkOut": "12:00 PM",
+        "amenities": [
+          "Baños",
+          "Zonas de fogón",
+          "Estacionamiento",
+          "Acceso a agua"
+        ],
+        "capacity": "Hasta 40 personas",
+        "bookingNotes": "Reservar por WhatsApp con 24 horas de anticipación"
+      },
+      "photos": [
+        "/imagenes-filandia/camping-1.webp"
+      ],
+      "isPautante": true
+    },
+    {
+      "id": 9,
+      "name": "Transporte Turístico Filandia",
+      "type": "Servicios",
+      "description": "Servicio de transporte turístico hacia miradores, fincas y sitios de interés. Vehículos cómodos y guías locales.",
+      "priceRange": "$$",
+      "rating": "4.7",
+      "timeInfo": "7am - 8pm",
+      "badge": "🚗 Transporte",
+      "color": "secondary",
+      "icon": "Car",
+      "contact": {
+        "phone": "+57 317 442 6044",
+        "whatsapp": "573174426044"
+      },
+      "location": {
+        "lat": 4.695,
+        "lng": -75.635,
+        "address": "Plaza de Bolívar",
+        "landmark": "Frente a la iglesia"
+      },
+      "operatingHours": {
+        "notes": "Servicio bajo reservación"
+      },
+      "tags": [
+        "transporte",
+        "turismo",
+        "guia",
+        "miradores",
+        "fincas",
+        "vehiculos"
+      ],
+      "verified": true,
+      "active": true,
+      "photos": [
+        "/imagenes-filandia/transporte-1.webp"
+      ],
+      "isPautante": true
+    },
+    {
+      "id": 10,
+      "name": "Senderismo Mirador Alto de la Cruz",
+      "type": "Experiencias",
+      "description": "Ruta de senderismo moderada hacia el mirador Alto de la Cruz con vistas 360° del Eje Cafetero. Duración: 2-3 horas.",
+      "priceRange": "Gratis",
+      "rating": "4.8",
+      "timeInfo": "6am - 6pm",
+      "badge": "🥾 Senderismo",
+      "color": "success",
+      "icon": "Mountain",
+      "contact": {
+        "phone": "+57 317 442 6044"
+      },
+      "location": {
+        "lat": 4.693,
+        "lng": -75.639,
+        "address": "Inicio: Calle 6, Filandia",
+        "landmark": "Salida del centro"
+      },
+      "operatingHours": {
+        "notes": "Recomendado ir temprano"
+      },
+      "tags": [
+        "senderismo",
+        "mirador",
+        "vista",
+        "naturaleza",
+        "ejercicio",
+        "gratuito"
+      ],
+      "verified": true,
+      "active": true,
+      "experienceDetails": {
+        "duration": "2-3 horas",
+        "difficulty": "Moderado",
+        "groupSize": "Sin límite",
+        "included": [
+          "Acceso al sendero",
+          "Vistas panorámicas",
+          "Mirador Alto de la Cruz"
+        ],
+        "notIncluded": [
+          "Guía",
+          "Transporte",
+          "Comida"
+        ],
+        "requirements": [
+          "Calzado para caminar",
+          "Ropa cómoda",
+          "Agua",
+          "Protector solar"
+        ],
+        "languages": [
+          "Español"
+        ],
+        "meetingPoint": "Calle 6, Filandia",
+        "cancellationPolicy": "No aplica (sendero público)",
+        "tariff": "Gratis"
+      },
+      "photos": [
+        "/imagenes-filandia/senderismo-1.webp"
+      ],
+      "isPautante": false
+    },
+    {
+      "id": 11,
+      "name": "Tienda de Café La Filandia",
+      "type": "Tiendas",
+      "description": "Tienda especializada en café de origen del Quindío. Grano tostado, molido y accesorios para preparar café.",
+      "priceRange": "$",
+      "rating": "4.7",
+      "timeInfo": "8am - 8pm",
+      "badge": "☕ Café Especialidad",
+      "color": "success",
+      "icon": "Coffee",
+      "contact": {
+        "phone": "+57 606 850 7777"
+      },
+      "location": {
+        "lat": 4.6955,
+        "lng": -75.635,
+        "address": "Calle Real #8-15",
+        "landmark": "Centro"
+      },
+      "operatingHours": {
+        "notes": "Abierto todos los días"
+      },
+      "tags": [
+        "cafe",
+        "grano",
+        "molido",
+        "accesorios",
+        "especialidad",
+        "origen"
+      ],
+      "verified": true,
+      "active": true,
+      "shopDetails": {
+        "products": [
+          "Café en grano",
+          "Café molido",
+          "Tazas",
+          "Prensa francesa",
+          "Molinillos"
+        ],
+        "priceRange": "$15.000 - $80.000",
+        "specialty": "Café 100% Quindío",
+        "paymentMethods": [
+          "Efectivo",
+          "Tarjeta",
+          "Transferencia"
+        ]
+      },
+      "photos": [
+        "/imagenes-filandia/tienda-cafe-1.webp"
+      ],
+      "isPautante": true
+    },
+    {
+      "id": 12,
+      "name": "Festival de Balcones",
+      "type": "Eventos",
+      "description": "Festival anual que celebra la arquitectura tradicional de balcones de guadua de Filandia. Exposiciones, música y gastronomía.",
+      "priceRange": "$$",
+      "rating": "4.9",
+      "timeInfo": "Enero 2026",
+      "badge": "🎉 Festival",
+      "color": "accent",
+      "icon": "Calendar",
+      "contact": {
+        "phone": "+57 317 442 6044",
+        "whatsapp": "573174426044"
+      },
+      "location": {
+        "lat": 4.695,
+        "lng": -75.635,
+        "address": "Centro de Filandia",
+        "landmark": "Plaza y Calle Real"
+      },
+      "operatingHours": {
+        "notes": "Evento anual"
+      },
+      "tags": [
+        "festival",
+        "balcones",
+        "guadua",
+        "cultura",
+        "musica",
+        "gastronomia"
+      ],
+      "verified": true,
+      "active": true,
+      "eventDetails": {
+        "date": "Enero 2026",
+        "duration": "3 días",
+        "type": "Festival cultural",
+        "activities": [
+          "Exposiciones de arquitectura",
+          "Música en vivo",
+          "Gastronomía local",
+          "Talleres de guadua",
+          "Recorridos guiados"
+        ],
+        "venue": "Centro de Filandia - Plaza y Calle Real",
+        "priceRange": "$10.000 - $50.000",
+        "freeActivities": true,
+        "ticketRequired": false
+      },
+      "photos": [
+        "/imagenes-filandia/festival-1.webp"
+      ],
+      "isPautante": false
+    },
+    {
       "id": 100,
       "name": "Hotel Boutique Filandia",
       "type": "Alojamientos",
@@ -276,6 +692,57 @@
       ],
       "verified": true,
       "active": true,
+      "accommodationDetails": {
+        "categoryLabel": "Hotel Boutique de Lujo · Vistas panorámicas",
+        "roomTypes": [
+          "Habitación Deluxe",
+          "Suite Premium",
+          "Suite Presidencial"
+        ],
+        "services": [
+          "Desayuno incluido",
+          "WiFi de alta velocidad",
+          "Spa y masajes",
+          "Parqueadero",
+          "Room service 24/7",
+          "Lavandería",
+          "Transporte al aeropuerto"
+        ],
+        "roomFeatures": [
+          "Vista panorámica al valle",
+          "Aire acondicionado",
+          "TV Smart 4K",
+          "Baño con jacuzzi",
+          "Cafetera Nespresso",
+          "Minibar",
+          "Balcón privado"
+        ],
+        "nearby": [
+          "Mirador de Filandia",
+          "Plaza de Bolívar",
+          "Restaurantes gourmet",
+          "Cafeterías"
+        ],
+        "policies": [
+          "Check-in: 3:00 PM",
+          "Check-out: 12:00 PM",
+          "No se aceptan mascotas",
+          "Cancelación hasta 48h antes",
+          "Depósito de garantía requerido"
+        ],
+        "checkIn": "3:00 PM",
+        "checkOut": "12:00 PM",
+        "amenities": [
+          "WiFi",
+          "Desayuno",
+          "Spa",
+          "Parqueadero",
+          "Aire acondicionado",
+          "Jacuzzi"
+        ],
+        "capacity": "Hasta 40 personas",
+        "bookingNotes": "Reservar por WhatsApp, email o teléfono con 48h de anticipación"
+      },
       "photos": [
         "/pautantes/hotel-boutique-filandia/imagenes/fachada-hotel.webp",
         "/pautantes/hotel-boutique-filandia/imagenes/habitacion-deluxe.webp"
@@ -320,6 +787,65 @@
       ],
       "verified": true,
       "active": true,
+      "foodServiceDetails": {
+        "cuisineType": [
+          "Colombiana",
+          "Trucha",
+          "Comida local"
+        ],
+        "specialties": [
+          "Trucha frita",
+          "Trucha a la plancha",
+          "Trucha al ajillo",
+          "Trucha gratinada",
+          "Trucha en hoja de plátano",
+          "Patacón"
+        ],
+        "menuHighlights": [
+          "Trucha frita $28.000",
+          "Trucha a la plancha $28.000",
+          "Trucha al ajillo $32.000",
+          "Trucha gratinada $36.000",
+          "Trucha en hoja de plátano $35.000",
+          "Patacón $8.000",
+          "Arepa con queso $5.000",
+          "Jugo natural $8.000"
+        ],
+        "menuItems": [
+          {
+            "id": "truchas-01",
+            "name": "Trucha frita",
+            "price": 28000,
+            "category": "truchas",
+            "description": "Trucha entera frita con patacón y arroz",
+            "isSpecialty": true
+          },
+          {
+            "id": "truchas-02",
+            "name": "Trucha a la plancha",
+            "price": 28000,
+            "category": "truchas",
+            "description": "Trucha a la plancha con ensalada",
+            "isSpecialty": true
+          },
+          {
+            "id": "truchas-03",
+            "name": "Trucha al ajillo",
+            "price": 32000,
+            "category": "truchas",
+            "description": "Trucha con salsa de ajo y hierbas",
+            "isSpecialty": true
+          }
+        ],
+        "ambiance": "Tradicional con vista al paisaje cafetero",
+        "capacity": "Hasta 50 personas",
+        "paymentMethods": [
+          "Efectivo",
+          "Tarjeta",
+          "Transferencia"
+        ],
+        "reservationRequired": false
+      },
       "photos": [
         "/pautantes/restaurante-truchas-filandia/imagenes/trucha-plancha.webp",
         "/pautantes/restaurante-truchas-filandia/imagenes/terraza-vista.webp"
@@ -364,6 +890,35 @@
       ],
       "verified": true,
       "active": true,
+      "coffeeShopDetails": {
+        "coffeeOrigin": "100% Quindío",
+        "coffeeTypes": [
+          "Tinto tradicional",
+          "Café especialidad",
+          "Cappuccino",
+          "Latte",
+          "Moccaccino"
+        ],
+        "specialties": [
+          "Tinto $4.000",
+          "Café especialidad $6.000",
+          "Cappuccino $7.000",
+          "Latte $7.000",
+          "Pastel $5.000"
+        ],
+        "tourAvailable": true,
+        "tourDuration": "30 minutos",
+        "tourPrice": "$15.000 por persona",
+        "merchandise": [
+          "Café en grano $15.000 (250g)",
+          "Café molido $15.000 (250g)",
+          "Taza Filandia $12.000",
+          "Taza de cerámica $18.000"
+        ],
+        "ambiance": "Acogedor con vista a la calle",
+        "wifi": true,
+        "outdoorSeating": true
+      },
       "photos": [
         "/pautantes/cafe-tradicion-filandia/imagenes/cafeteria-interior.webp",
         "/pautantes/cafe-tradicion-filandia/imagenes/cafe-tinto.webp"

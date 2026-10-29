@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, MapPin, Coffee, Building2, Utensils, Star, Heart, Navigation, Menu, X, Globe, Moon, Sun, Zap } from 'lucide-react'
+import { Search, MapPin, Coffee, Building2, Utensils, Star, Heart, Navigation, Menu, X, Globe, Moon, Sun, Zap, ShoppingBag, Mountain, Calendar, Car, Campfire, Hotel } from 'lucide-react'
 import { useStore } from './store/useStore'
 import AdvancedMap from './components/map/AdvancedMap'
 import ThemeToggle from './components/ui/ThemeToggle'
@@ -184,12 +184,13 @@ function App() {
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
-              background: 'linear-gradient(135deg, var(--primary-50) 0%, var(--background) 100%)'
+              background: 'linear-gradient(135deg, var(--primary-50) 0%, var(--background) 100%)',
+              paddingTop: '120px'
             }}>
               <div className="container" style={{
                 textAlign: 'center',
                 position: 'relative',
-                zIndex: 2
+                zIndex: 10
               }}>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5, rotate: -5 }}
@@ -382,7 +383,7 @@ function App() {
               />
             </section>
 
-            {/* Features Section */}
+            {/* Categories Section with Featured Businesses */}
             <section style={{
               padding: '120px 0',
               background: 'var(--background)'
@@ -394,25 +395,71 @@ function App() {
                   viewport={{ once: true }}
                   style={{ textAlign: 'center', marginBottom: '64px' }}
                 >
-                  <h2 style={{ marginBottom: '16px' }}>
-                    Descubre Filandia
-                  </h2>
+                  <h2>Categorías Destacadas</h2>
                   <p style={{ margin: '0 auto' }}>
-                    Experiencias únicas en el corazón del Eje Cafetero
+                    Negocios verificados en cada categoría
                   </p>
                 </motion.div>
 
                 <div className="grid grid-3">
                   {[
-                    { icon: Coffee, title: 'Café de Origen', desc: 'Tours en fincas cafeteras auténticas' },
-                    { icon: MapPin, title: 'Miradores', desc: 'Vistas panorámicas del Quindío' },
-                    { icon: Building2, title: 'Balcones de Guadua', desc: 'Arquitectura tradicional única' },
-                    { icon: Utensils, title: 'Gastronomía', desc: 'Truchas y comida tradicional' },
-                    { icon: Star, title: 'Alojamiento', desc: 'Hoteles boutique con vistas' },
-                    { icon: Heart, title: 'Cultura', desc: 'Artesanías y tradiciones' }
-                  ].map((feature, index) => (
+                    { 
+                      category: 'Alojamientos', 
+                      name: 'Hotel Boutique Filandia', 
+                      rating: '4.9',
+                      price: '$$$$',
+                      desc: 'Hotel boutique de lujo con vistas panorámicas al valle del Quindío',
+                      badge: '🏆 Premium',
+                      icon: Hotel
+                    },
+                    { 
+                      category: 'Restaurantes', 
+                      name: 'Restaurante Las Truchas', 
+                      rating: '4.7',
+                      price: '$$',
+                      desc: 'El mejor restaurante de truchas en Filandia, preparadas a la plancha',
+                      badge: '⭐ Popular',
+                      icon: Utensils
+                    },
+                    { 
+                      category: 'Cafeterías', 
+                      name: 'Café Tradición', 
+                      rating: '4.8',
+                      price: '$',
+                      desc: 'Cafetería artesanal con café 100% de origen del Quindío',
+                      badge: '☕ Café de Origen',
+                      icon: Coffee
+                    },
+                    { 
+                      category: 'Coffee Tours', 
+                      name: 'Finca El Divino Niño', 
+                      rating: '4.9',
+                      price: '$$',
+                      desc: 'Experiencia auténtica de café con tour educativo y degustación',
+                      badge: '☕ 100% Origen',
+                      icon: Coffee
+                    },
+                    { 
+                      category: 'Artesanías', 
+                      name: 'Artesanías de Filandia', 
+                      rating: '4.6',
+                      price: '$',
+                      desc: 'Tienda de artesanías tradicionales: hammacas, sombreros y textiles',
+                      badge: '🎨 Hecho a Mano',
+                      icon: ShoppingBag
+                    },
+                    { 
+                      category: 'Experiencias', 
+                      name: 'Senderismo Alto de la Cruz', 
+                      rating: '4.8',
+                      price: 'Gratis',
+                      desc: 'Ruta de senderismo moderada con vistas 360° del Eje Cafetero',
+                      badge: '🥾 Senderismo',
+                      icon: Mountain
+                    }
+                  ].map((item, index) => (
                     <motion.div
-                      key={feature.title}
+                      key={item.name}
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -422,9 +469,11 @@ function App() {
                         background: 'var(--surface)',
                         borderRadius: 'var(--radius-xl)',
                         border: '1px solid var(--border)',
-                        textAlign: 'center',
+                        textAlign: 'left',
                         cursor: 'pointer',
-                        transition: 'all var(--transition)'
+                        transition: 'all var(--transition)',
+                        position: 'relative',
+                        overflow: 'hidden'
                       }}
                       whileHover={{
                         transform: 'translateY(-8px)',
@@ -433,20 +482,68 @@ function App() {
                       }}
                     >
                       <div style={{
+                        position: 'absolute',
+                        top: '16px',
+                        right: '16px',
+                        padding: '4px 12px',
+                        background: 'var(--primary-100)',
+                        color: 'var(--primary-700)',
+                        borderRadius: 'var(--radius-full)',
+                        fontSize: '0.75rem',
+                        fontWeight: 700
+                      }}>
+                        {item.badge}
+                      </div>
+                      
+                      <div style={{
                         width: '64px',
                         height: '64px',
-                        background: 'var(--primary-50)',
+                        background: 'linear-gradient(135deg, var(--primary), var(--primary-dark))',
                         borderRadius: 'var(--radius-lg)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        margin: '0 auto 24px',
-                        color: 'var(--primary)'
+                        marginBottom: '20px',
+                        color: 'white'
                       }}>
-                        <feature.icon size={32} />
+                        <item.icon size={32} />
                       </div>
-                      <h3 style={{ marginBottom: '12px' }}>{feature.title}</h3>
-                      <p style={{ margin: '0' }}>{feature.desc}</p>
+                      
+                      <h3 style={{ marginBottom: '8px', fontSize: '1.25rem' }}>{item.name}</h3>
+                      <p style={{ 
+                        fontSize: '0.875rem', 
+                        color: 'var(--text-secondary)',
+                        marginBottom: '16px',
+                        lineHeight: 1.5
+                      }}>
+                        {item.desc}
+                      </p>
+                      
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: '16px',
+                        paddingTop: '16px',
+                        borderTop: '1px solid var(--border)'
+                      }}>
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          color: 'var(--accent)',
+                          fontWeight: 600
+                        }}>
+                          <Star size={16} fill="currentColor" />
+                          <span>{item.rating}</span>
+                        </div>
+                        <div style={{
+                          fontWeight: 600,
+                          color: 'var(--text)'
+                        }}>
+                          {item.price}
+                        </div>
+                      </div>
                     </motion.div>
                   ))}
                 </div>
