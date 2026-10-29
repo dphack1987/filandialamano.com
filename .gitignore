@@ -32,3 +32,6 @@ dist-ssr
 
 # Build outputs
 *.tsbuildinfo
+
+# npmrc (Vercel specific)
+.npmrc
