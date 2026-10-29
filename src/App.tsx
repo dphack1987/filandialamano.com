@@ -171,9 +171,9 @@ function App() {
             <section className="hero">
               <div className="container hero-inner">
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.5, rotate: -5 }}
+                  initial={{ opacity: 0, scale: 0.6, rotate: -4 }}
                   animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                  transition={{ duration: 1.2, type: 'spring', bounce: 0.4 }}
+                  transition={{ duration: 1, type: 'spring', bounce: 0.35 }}
                   className="hero-logo-wrap"
                 >
                   <div className="hero-logo-glow" />
@@ -185,23 +185,23 @@ function App() {
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
+                  transition={{ delay: 0.15 }}
                 >
                   <div className="hero-badge">
-                    <Zap size={16} />
-                    <span>{places.length} lugares para explorar</span>
+                    <Zap size={15} />
+                    <span>Eje Cafetero · Quindío · Colombia</span>
                   </div>
                 </motion.div>
 
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.8 }}
+                  transition={{ delay: 0.25, duration: 0.8 }}
                   className="hero-title"
                 >
-                  Descubre el Corazón del Quindío
+                  Filandia <em>a la Mano</em>
                 </motion.h1>
 
                 <motion.p
@@ -210,18 +210,19 @@ function App() {
                   transition={{ delay: 0.4, duration: 0.8 }}
                   className="hero-subtitle"
                 >
-                  Balcones de guadua, paisajes cafeteros y miradores panorámicos de Filandia en un solo mapa.
+                  Balcones de guadua, miradores panorámicos y el sabor del café en el
+                  pueblo más pintoresco del Quindío. Todo en un solo mapa.
                 </motion.p>
 
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.8 }}
+                  transition={{ delay: 0.55, duration: 0.8 }}
                   className="hero-cta"
                 >
                   <button className="btn-primary" onClick={() => setActiveSection('map')}>
                     <MapPin size={20} />
-                    Explorar Mapa
+                    Explorar el Mapa
                   </button>
                   <button
                     className="btn-outline"
@@ -233,6 +234,25 @@ function App() {
                     <Heart size={18} />
                     Mis Favoritos
                   </button>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7, duration: 0.8 }}
+                  className="hero-stats"
+                >
+                  {[
+                    { value: places.length, label: 'lugares' },
+                    { value: categorySummaries.length, label: 'categorías' },
+                    { value: '1.900', label: 'msnm' },
+                    { value: '★ 4.8', label: 'promedio' },
+                  ].map((s) => (
+                    <div key={s.label} className="hero-stat">
+                      <div className="hero-stat-value">{s.value}</div>
+                      <div className="hero-stat-label">{s.label}</div>
+                    </div>
+                  ))}
                 </motion.div>
               </div>
             </section>
@@ -246,8 +266,12 @@ function App() {
                     viewport={{ once: true }}
                     className="section-header"
                   >
+                    <div className="section-eyebrow">
+                      <Coffee size={14} />
+                      Explora
+                    </div>
                     <h2>Categorías</h2>
-                    <p>Explora Filandia por tipo de experiencia</p>
+                    <p>Cada rincón de Filandia, organizado para ti</p>
                   </motion.div>
 
                   <div className="grid grid-4">
@@ -282,6 +306,52 @@ function App() {
               </section>
             )}
 
+            <section className="section vibe-strip">
+              <div className="container">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="section-header"
+                >
+                  <div className="section-eyebrow">
+                    <Mountain size={14} />
+                    Experiencias
+                  </div>
+                  <h2>¿Cómo es tu día en Filandia?</h2>
+                  <p>Elige un plan y te llevamos al mapa</p>
+                </motion.div>
+                <div className="vibe-grid">
+                  {[
+                    { icon: '☕', title: 'Café de especialidad', desc: 'Catas y fincas', cat: 'cafeterias' },
+                    { icon: '🌅', title: 'Miradores', desc: 'Vistas del Eje', cat: 'sitios' },
+                    { icon: '🛏️', title: 'Alojarse', desc: 'Hoteles y hostales', cat: 'alojamientos' },
+                    { icon: '🍽️', title: 'Comer rico', desc: 'Gastronomía local', cat: 'restaurantes' },
+                    { icon: '🥾', title: 'Aventura', desc: 'Senderos y naturaleza', cat: 'experiencias' },
+                    { icon: '🛍️', title: 'Artesanías', desc: 'Guadua y tejidos', cat: 'comercio' },
+                  ].map((vibe, i) => (
+                    <motion.button
+                      key={vibe.title}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.05 }}
+                      className="vibe-card"
+                      onClick={() => {
+                        useStore.getState().setSelectedCategory(vibe.cat)
+                        useStore.getState().setShowFavoritesOnly(false)
+                        setActiveSection('map')
+                      }}
+                    >
+                      <span className="vibe-emoji">{vibe.icon}</span>
+                      <span className="vibe-title">{vibe.title}</span>
+                      <span className="vibe-desc">{vibe.desc}</span>
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+            </section>
+
             {featured.length > 0 && (
               <section className="section section-alt">
                 <div className="container">
@@ -291,8 +361,12 @@ function App() {
                     viewport={{ once: true }}
                     className="section-header"
                   >
-                    <h2>Destacados</h2>
-                    <p>Los mejor valorados y recomendados de Filandia</p>
+                    <div className="section-eyebrow">
+                      <Star size={14} />
+                      Imperdibles
+                    </div>
+                    <h2>Lugares Destacados</h2>
+                    <p>Lo mejor valorado por los viajeros</p>
                   </motion.div>
 
                   <div className="grid grid-3">
@@ -306,6 +380,7 @@ function App() {
                       >
                         <PlaceCard
                           place={place}
+                          variant="featured"
                           onClick={() => {
                             setSelectedPlace(place)
                             setActiveSection('map')
